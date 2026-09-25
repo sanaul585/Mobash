@@ -1,0 +1,3156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fff5f7;
+    color: #3b2430;
+    overflow-x: hidden;
+}
+
+/* ================= NEW: UNIQUE GLASSMORPHISM NAVBAR ================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 245, 247, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+    box-shadow: 0 4px 30px rgba(199, 71, 109, 0.05);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(244, 209, 220, 0.4);
+}
+
+.menu-list {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: #684454;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-list li a:hover, 
+.menu-list li a.active-nav {
+    color: #c7476d;
+    font-weight: 600;
+}
+
+/* Hover ya Active hone par dil (❤) aane ka animation */
+.menu-list li a::after {
+    content: '❤';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    font-size: 8px;
+    color: #c7476d;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu-list li a:hover::after, 
+.menu-list li a.active-nav::after {
+    transform: translateX(-50%) scale(1.3);
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    min-height: 100vh;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 20px 40px 20px; /* Menu bar ke liye top spacing */
+    position: relative;
+}
+
+.section.active {
+    display: flex;
+    animation: fadeIn 1s ease;
+}
+
+/* ================= NEW ABOUT & GALLERY EXTRA CARDS ================= */
+.dynamic-card {
+    width: min(650px, 95%);
+    padding: 50px 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 30px;
+    box-shadow: 0 20px 70px rgba(100, 40, 60, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.dynamic-card h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(20px, 5vw, 35px);
+    color: #a8385c;
+    margin-bottom: 20px;
+}
+
+.dynamic-card p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #624452;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 180px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 10px 25px rgba(199, 71, 109, 0.15);
+    background-color: #fff0f3;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05) rotate(2deg); /* Polaroid style tile hover effect */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================= HERO ================= */
+.hero {
+    text-align: center;
+    background:
+        radial-gradient(circle at top left, #ffdce6, transparent 40%),
+        radial-gradient(circle at bottom right, #ffe9ef, transparent 40%),
+        #fff5f7;
+}
+
+.hero-content {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+}
+
+.small-text {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #b24b6b;
+    margin-bottom: 20px;
+	margin:20px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 8vw, 82px);
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #c7476d;
+}
+
+.typing {
+    min-height: 60px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #684454;
+    margin-bottom: 35px;
+}
+
+/* ================= BUTTON ================= */
+.main-btn, .yes-btn, .talk-btn {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.main-btn {
+    background: #c7476d;
+    color: white;
+    box-shadow: 0 10px 30px rgba(199, 71, 109, 0.25);
+}
+
+.main-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(199, 71, 109, 0.35);
+}
+
+/* ================= CARD ================= */
+.card, .question-card, .final-card {
+    width: min(700px, 95%);
+    padding: 50px 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 30px;
+    box-shadow: 0 20px 70px rgba(100, 40, 60, 0.12);
+    backdrop-filter: blur(10px);
+}
+
+.icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.card h2, .question-card h2, .final-card h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(32px, 6vw, 48px);
+    color: #a8385c;
+    margin-bottom: 25px;
+}
+
+.card p, .question-card p, .final-card p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #624452;
+    margin-bottom: 18px;
+}
+
+.highlight {
+    color: #b83d64 !important;
+    font-weight: 500;
+}
+
+/* ================= QUESTION ================= */
+.question-card {
+    max-width: 650px;
+}
+
+.big-heart {
+    font-size: 80px;
+    animation: heartbeat 1.4s infinite;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.yes-btn {
+    background: #c7476d;
+    color: white;
+}
+
+.yes-btn:hover {
+    transform: scale(1.08);
+}
+
+.talk-btn {
+    background: #ffe1e9;
+    color: #a8385c;
+}
+
+.talk-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* ================= ENVELOPE ================= */
+.envelope {
+    font-size: 90px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    animation: float 2s ease-in-out infinite;
+}
+
+.envelope:hover {
+    transform: scale(1.1);
+}
+
+/* ================= LETTER ================= */
+.letter {
+    display: none;
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #fff8fa;
+    border: 1px solid #f4d1dc;
+    animation: letterOpen 1s ease;
+}
+
+.letter.show {
+    display: block;
+}
+
+.letter h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    color: #a8385c;
+    margin-bottom: 15px;
+}
+
+.signature {
+    font-family: "Playfair Display", serif;
+    font-size: 21px !important;
+    color: #a8385c !important;
+}
+
+/* ================= HEARTS ================= */
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    font-size: 20px;
+    opacity: 0.7;
+    animation: rise linear forwards;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes rise {
+    from { transform: translateY(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.7; }
+    to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes letterOpen {
+    from { opacity: 0; transform: scale(0.8) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ================= MOBILE OPTIMIZATION ================= */
+@media (max-width: 600px) {
+    .navbar { padding: 12px 0; }
+    .menu-list { gap: 25px; }
+    .menu-list li a { font-size: 12px; letter-spacing: 1px; }
+    .section { padding: 80px 15px 30px 15px; }
+    .card, .question-card, .final-card, .dynamic-card { padding: 35px 22px; border-radius: 24px; }
+    .gallery-grid { grid-template-columns: 1fr; gap: 15px; }
+    .gallery-item { height: 180px; }
+    .hero h1 { font-size: 40px; }
+    .typing { font-size: 15px; }
+    .card p, .question-card p, .final-card p { font-size: 14px; }
+    .main-btn, .yes-btn, .talk-btn { width: 100%; }
+    .buttons { flex-direction: column; }
+    .letter { padding: 22px 18px; }
+}
+
+
+
+/* ================= NEW: HEADER LAYOUT (TITLE LEFT, MENU RIGHT) ================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 245, 247, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 9999;
+    border-bottom: 1px solid rgba(244, 209, 220, 0.4);
+    box-shadow: 0 4px 30px rgba(199, 71, 109, 0.05);
+    padding: 15px 0;
+}
+
+/* Container jo dono cheezon ko corners par fill rakhega */
+.nav-container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Isse title left aur menu right ho jayega */
+    align-items: center;
+}
+
+/* Left Side Logo/Title Style */
+.nav-logo {
+    color: #c7476d;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Right Side Menu Layout */
+.menu-list {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: #684454;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-list li a:hover, 
+.menu-list li a.active-nav {
+    color: #c7476d;
+    font-weight: 600;
+}
+
+/* Hover/Active Indicator Heart */
+.menu-list li a::after {
+    content: '❤';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    font-size: 8px;
+    color: #c7476d;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu-list li a:hover::after, 
+.menu-list li a.active-nav::after {
+    transform: translateX(-50%) scale(1.3);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .menu-list {
+        gap: 20px;
+    }
+}
+
+/* ================= UPDATED: PERFECT BOX SIZE FOR 700x1088 IMAGES ================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px; /* Boxes ke beech me thoda premium gap */
+    margin: 30px 0;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: 100%;
+    /* 700x1088 ki vertical scaling ke liye height ko 280px kiya hai */
+    height: 350px; 
+    border-radius: 16px;
+    overflow: hidden;
+    border: 6px solid white; /* Polaroid look ke liye mota white border */
+    box-shadow: 0 12px 30px rgba(199, 71, 109, 0.18);
+    background-color: #fff0f3;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-item:hover {
+    /* Hover karne par halka sa premium tilt aur zoom animation */
+    transform: scale(1.05) translateY(-5px); 
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    /* Isse aapki 700x1088 px wali photo frame ke andar bina chehra kate fit ho jayegi */
+    object-fit: cover; 
+    object-position: center top; /* Face focus center aur top par rakhega */
+}
+
+/* Mobile responsive me box size auto adjust hone ke liye */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Mobile me ek ke niche ek dikhega */
+        gap: 20px;
+    }
+    
+    .gallery-item {
+        height: 320px; /* Mobile screen par thoda bada vertical view */
+    }
+}
+
+
+/* ================= GALLERY GRID & GRADIENT ANIMATION STYLING ================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px; /* Border glow ko space dene ke liye thoda gap badhaya hai */
+    margin: 40px 0;
+    justify-content: center;
+}
+
+/* Main animated container card */
+.gallery-item {
+    position: relative;
+    width: 100%;
+    height: 350px; 
+    border-radius: 20px;
+    background: #fff0f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Bahar nikalne wali extra light ko chhupane ke liye */
+    box-shadow: 0 15px 35px rgba(199, 71, 109, 0.15);
+    transition: transform 0.4s ease;
+}
+
+/* Hover karne par card ka scale animation */
+.gallery-item:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(199, 71, 109, 0.3);
+}
+
+/* ─── BORDER ANIMATION LOGIC (Rotating Gradient Line) ─── */
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    /* Yahan aap romantic theme ke colors ko adjust kar sakte hain */
+    background: linear-gradient(0deg, transparent, transparent, #ff4757, #c7476d, #ffb3b3);
+    animation: rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder {
+    0% { transform: rotate(10deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ─── INNER CONTAINER (Jo photo ko center me border ke sath dikhayega) ─── */
+.gallery-inner {
+    position: absolute;
+    inset: 4px; /* Is value ko jitna badhaenge, border line utni hi moti dikhegi */
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.gallery-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Mobile Devices ke liye spacing auto-adjust */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .gallery-item {
+        height: 320px;
+    }
+}
+
+
+
+/* ================= SCREENSHOT MATCHING RED SOCIAL ICONS ================= */
+.colorlib-footer {
+    display: flex;
+    align-items: center;
+}
+
+.colorlib-footer ul {
+    display: flex;
+    list-style: none;
+    gap: 10px; /* आइकन्स के बीच का परफेक्ट गैप */
+    padding: 0;
+    margin: 0;
+}
+
+.colorlib-footer ul li {
+    display: flex;
+    align-items: center;
+}
+
+/* बिल्कुल स्क्रीनशॉट जैसा रेड बॉक्स लुक */
+.colorlib-footer ul li a.foru {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; /* स्क्वायर बॉक्स की चौड़ाई */
+    height: 32px; /* स्क्वायर बॉक्स की ऊंचाई */
+    background-color: #c7476d; /* आपकी प्रपोजल थीम का परफेक्ट रेड कलर */
+    color: #ffffff; /* आइकन का अंदरूनी हिस्सा वाइट रहेगा */
+    border-radius: 4px; /* हल्का सा राउंडेड कॉर्नर जैसा स्क्रीनशॉट में है */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* अंदर के SVG आइकन का साइज कंट्रोल करने के लिए */
+.colorlib-footer ul li a.foru svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* जब माउस आइकन पर जाएगा (Hover Effect) */
+.colorlib-footer ul li a.foru:hover {
+    background-color: #a8385c; /* होवर करने पर थोड़ा गहरा रेड कलर */
+    transform: translateY(-2px); /* हल्का सा ऊपर उठेगा */
+    box-shadow: 0 4px 10px rgba(199, 71, 109, 0.3); /* सुंदर सी रेड ग्लो शैडो */
+}
+
+/* मोबाइल स्क्रीन के लिए अलाइनमेंट */
+@media (max-width: 600px) {
+    .colorlib-footer {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+}
+
+
+
+
+/* ================= AUTOMATIC DYNAMIC FLEXIBLE GALLERY GRID ================= */
+.gallery-grid {
+    display: grid;
+    /* 1. AUTOMATIC BALANCING: Screen ke hisab se columns auto-arrange honge */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    gap: 5vw; /* Fluid space jo screen ke size ke sath chhota-bada hoga */
+    margin: 40px auto;
+    width: 100%;
+    max-width: 580px; /* Card box ke andar grid ki limit set karne ke liye */
+    justify-content: center;
+}
+
+/* Dynamic Flex Container */
+.gallery-item {
+    position: relative;
+    width: 100%;
+    /* 2. AUTOMATIC RATIO: 700x1088 ke vertical scaling ko har screen par live save rakhega */
+    aspect-ratio: 700 / 1000; 
+    border-radius: 20px;
+    background: #fff0f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(199, 71, 109, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.04) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(199, 71, 109, 0.25);
+}
+
+/* Neon Glow Effect Layer */
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    width: 180%;
+    height: 180%;
+    background: linear-gradient(0deg, transparent, transparent, #ff4757, #c7476d, #ffb3b3);
+    animation: rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Inner Frame Wrapper */
+.gallery-inner {
+    position: absolute;
+    inset: 4px; /* Adaptive neon padding space */
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* 3. FLUID IMAGE: Bina distort hue face top area par fit rahega */
+.gallery-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top; 
+}
+
+/* ================= 100% CLEAN MOBILE OVERRIDE ================= */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        flex-direction: column !important;
+        gap: 12px !important;
+        text-align: center !important;
+    }
+    .menu-list {
+        gap: 20px !important;
+    }
+    .menu-list li a {
+        font-size: 12px !important;
+        letter-spacing: 1px !important;
+    }
+    .card, .question-card, .final-card, .dynamic-card {
+        padding: 30px 16px !important;
+        border-radius: 24px !important;
+        width: 100% !important;
+    }
+    
+    /* Mobile ke liye dynamic padding space setup */
+    .gallery-grid {
+        gap: 20px !important;
+        padding: 0 10px;
+    }
+
+    .hero h1 { font-size: 36px !important; }
+    .typing { font-size: 15px !important; }
+    .main-btn, .yes-btn, .talk-btn { width: 100% !important; }
+    .buttons { flex-direction: column !important; }
+    .timeline-container { padding-left: 20px !important; }
+    .timeline-dot { left: -34px !important; }
+}
+
+    /* ─── MOBILE VIEW: LEFT-RIGHT IMAGES & AUTOMATIC BORDER FITTING ─── */
+    .gallery-grid {
+        display: grid !important;
+        /* 1. मोबाइल पर भी दोनों इमेजेस को लेफ्ट-राइट (2 Columns) में लॉक रखने के लिए */
+        grid-template-columns: 1fr 1fr !important; 
+        gap: 12px !important; /* मोबाइल स्क्रीन के हिसाब से दोनों फोटो के बीच का गैप */
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 25px auto 15px auto !important;
+    }
+
+
+    .gallery-item {
+        width: 100% !important;
+        /* 2. एस्पेक्ट रेशियो को 700/1088 करने से बॉर्डर बिल्कुल फोटो के साइज पर चिपक जाएगा */
+        aspect-ratio: 700 / 1088 !important; 
+        height: auto !important; /* फिक्स हाइट हटा दी ताकि फोटो के हिसाब से सेट हो */
+        border-radius: 12px !important; /* मोबाइल के लिए हल्का सा छोटा राउंडेड कॉर्नर */
+    }
+
+    .gallery-inner {
+        inset: 3px !important; /* मोबाइल पर नियॉन बॉर्डर लाइन को थोड़ा पतला और सटीक फिट रखने के लिए */
+        border-radius: 9px !important;
+    }
+
+    .gallery-inner img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* बगल-बगल आने पर डिब्बे को पूरा भरने के लिए */
+        object-position: center top !important; /* चेहरा हमेशा ऊपर और सेंटर में फोकस रहेगा */
+    }
+
+
+
+
+
+/* ================= PREMIUM VERTICAL TIMELINE DESIGN ================= */
+.timeline-container {
+    margin: 40px auto 30px auto;
+    position: relative;
+    max-width: 480px;
+    padding-left: 35px;
+    /* Left side me beautiful dashed line jo milestones ko connect karegi */
+    border-left: 2px dashed #f4d1dc; 
+    text-align: left;
+}
+
+.timeline-block {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.timeline-block:last-child {
+    margin-bottom: 10px; /* Last block ka margin bottom reset */
+}
+
+/* Milestones ke gol dabbe (Dots) */
+.timeline-dot {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-color: #ffffff;
+    border: 2px solid #f4d1dc;
+    border-radius: 50%;
+    left: -52px; /* Line ke upar perfectly center karne ke liye */
+    top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(199, 71, 109, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.timeline-block:hover .timeline-dot {
+    transform: scale(1.2); /* Hover karne par emoji chhota sa pop up hoga */
+    border-color: #c7476d;
+}
+
+/* Timeline ke text content ki styling */
+.timeline-content h4 {
+    font-family: "Playfair Display", serif;
+    color: #a8385c;
+    font-size: 18px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #624452 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Mobile Devices par perfectly screen adjust karne ke liye */
+@media screen and (max-width: 600px) {
+    .timeline-container {
+        padding-left: 25px;
+        margin: 30px auto 20px auto;
+    }
+    .timeline-dot {
+        left: -41px;
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    .timeline-content h4 {
+        font-size: 16px;
+    }
+}
+
+
+
+/* ================= FUTURE DREAMS CARD STYLING ================= */
+.dreams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.dream-card {
+    background: rgba(255, 248, 250, 0.6);
+    border: 1px solid #f4d1dc;
+    padding: 20px 15px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* कार्ड पर माउस ले जाने पर खूबसूरत लाल ग्लो आएगा */
+.dream-card:hover {
+    transform: translateY(-5px);
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(199, 71, 109, 0.12);
+    border-color: #c7476d;
+}
+
+.dream-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.dream-card h4 {
+    font-family: "Playfair Display", serif;
+    color: #a8385c;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.dream-card p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    color: #624452 !important;
+    margin-bottom: 0 !important;
+}
+
+/* मोबाइल स्क्रीन के लिए ग्रिड का पैडिंग */
+@media screen and (max-width: 600px) {
+    .dreams-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+
+/* ================= FIXED: BEAUTIFUL SCROLL CHAT BOX & LUSH LAYOUT ================= */
+
+/* मुख्य होम सेक्शन जो स्क्रॉलिंग को सपोर्ट करेगा */
+.hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-height: 100vh;
+    height: auto !important;
+    padding-top: 140px !important;
+    padding-bottom: 60px !important;
+    background:
+        radial-gradient(circle at top left, #ffdce6, transparent 40%),
+        radial-gradient(circle at bottom right, #ffe9ef, transparent 40%),
+        #fff5f7;
+}
+
+/* पहली स्क्रीन पर केवल टेक्स्ट और बटन दिखेगा */
+.hero-content {
+    max-width: 750px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px !important;
+}
+
+/* चैट बॉक्स का प्रीमियम कस्टमाइज्ड लव-थीम लुक */
+.proposal-chat-container {
+    width: min(450px, 95%) !important;
+    background: #ffffff !important;
+    border-radius: 24px !important;
+    box-shadow: 0 20px 50px rgba(100, 40, 60, 0.12) !important;
+    border: 1px solid #f4d1dc !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+    overflow: hidden !important;
+    margin: 40px auto 20px auto !important;
+    z-index: 99;
+}
+
+.chat-header {
+    background: #c7476d !important;
+    color: white !important;
+    padding: 14px 20px !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    letter-spacing: 0.5px !important;
+}
+
+.chat-messages-area {
+    height: 250px !important;
+    padding: 15px !important;
+    overflow-y: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    background: #fff8fa !important;
+}
+
+/* चैट के अंदर के मैसेज बबल्स */
+.msg-bubble {
+    max-width: 75% !important;
+    padding: 10px 14px !important;
+    border-radius: 16px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    display: block !important;
+    color: #3b2430 !important;
+}
+
+.sender-tag {
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    display: block !important;
+    margin-bottom: 2px !important;
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* आने वाले मैसेज */
+.incoming {
+    background: #ffffff !important;
+    align-self: flex-start !important;
+    border-bottom-left-radius: 4px !important;
+    border: 1px solid #f4d1dc !important;
+}
+
+/* आपके द्वारा भेजे गए मैसेज */
+.outgoing {
+    background: #c7476d !important;
+    color: white !important;
+    align-self: flex-end !important;
+    border-bottom-right-radius: 4px !important;
+}
+.outgoing .sender-tag {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* इनपुट बार */
+.chat-input-bar {
+    display: flex !important;
+    align-items: center !important;
+    padding: 10px !important;
+    background: #ffffff !important;
+    border-top: 1px solid #f4d1dc !important;
+    gap: 8px !important;
+}
+
+.chat-input-bar input {
+    flex: 1 !important;
+    border: 1px solid #f4d1dc !important;
+    padding: 10px 14px !important;
+    border-radius: 50px !important;
+    outline: none !important;
+    font-size: 14px !important;
+    background: #ffffff !important;
+    color: #3b2430 !important;
+}
+
+.img-btn {
+    font-size: 20px !important;
+    cursor: pointer !important;
+    padding: 0 4px !important;
+}
+
+.send-msg-btn {
+    background: #c7476d !important;
+    color: white !important;
+    border: none !important;
+    padding: 9px 18px !important;
+    border-radius: 50px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+}
+
+.send-msg-btn:hover {
+    background: #a8385c !important;
+}
+
+.chat-img-preview {
+    max-width: 100% !important;
+    border-radius: 8px !important;
+    margin-top: 5px !important;
+}
+
+/* मोबाइल के लिए परफेक्ट अलाइनमेंट */
+@media screen and (max-width: 768px) {
+    .hero { padding-top: 100px !important; }
+    .proposal-chat-container { margin: 30px auto 10px auto !important; }
+}
+
+
+/* ================= FIXED: HERO DISPLAY OVERRIDE FOR HIDING SYSTEM ================= */
+.hero {
+    /* 1. !important को हटाकर नॉर्मल flex किया ताकि जावास्क्रिप्ट इसे आसानी से chhipa sake */
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 140px !important;
+    padding-bottom: 60px !important;
+    background:
+        radial-gradient(circle at top left, #ffdce6, transparent 40%),
+        radial-gradient(circle at bottom right, #ffe9ef, transparent 40%),
+        #fff5f7;
+}
+
+/* 2. Jab home page active na ho, toh use har haal me chhipane ke liye style override */
+.section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px 20px 40px 20px;
+    position: relative;
+    /* Default roop se sabhi sections chhipenge */
+    display: none !important; 
+}
+
+/* 3. Jo section active hoga, sirf wahi display flex ke sath samne aayega */
+.section.active {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease;
+}
+
+
+
+/* ================= NEW: EXPANDED ABOUT PAGE STYLING ================= */
+.expanded-about-card {
+    width: min(700px, 95%) !important;
+    text-align: center;
+}
+
+.about-subtitle {
+    font-size: 15px !important;
+    font-style: italic;
+    color: #b24b6b !important;
+    margin-bottom: 25px !important;
+}
+
+.about-intro-box {
+    background: rgba(255, 248, 250, 0.5);
+    border: 1px solid #f4d1dc;
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+.about-intro-box {
+    background: linear-gradient(
+        360deg,
+        #DA70D6,
+        #FFDAB9,
+        #e8d5ff,
+        #ffc4dc,
+        #6495ED
+    );
+
+    background-size: 400% 400%;
+
+    animation: aboutGradientMove 16s ease infinite;
+
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(255, 80, 140, 0.22);
+}
+
+@keyframes aboutGradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 50% 100%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.about-intro-box p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    color: #00008B !important;
+    margin-bottom: 0 !important;
+}
+
+/* 3 बॉक्सेस वाला ग्रिड सिस्टम */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.value-item {
+    background: #ffffff;
+    border: 1px solid #f4d1dc;
+    padding: 20px 15px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(100, 40, 60, 0.03);
+    transition: all 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-4px);
+    border-color: #c7476d;
+    box-shadow: 0 10px 25px rgba(199, 71, 109, 0.1);
+}
+
+.value-icon {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.value-item h4 {
+    font-family: "Playfair Display", serif;
+    color: #a8385c;
+    font-size: 16px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.value-item p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    color: #624452 !important;
+    margin-bottom: 0 !important;
+}
+
+/* प्रॉमिस बॉक्स की डिज़ाइन */
+.about-promise-box {
+    background: linear-gradient(135deg, #fffcfd, #fff0f3);
+    border-left: 4px solid #c7476d;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.about-promise-box h4 {
+    font-family: "Playfair Display", serif;
+    color: #a8385c;
+    font-size: 17px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.about-promise-box p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    font-style: italic;
+    color: #3b2430 !important;
+    margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 600px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .about-intro-box {
+        text-align: left;
+    }
+}
+
+
+/* ================= MUSIC TOGGLE MENU BUTTON STYLING ================= */
+.music-toggle-btn {
+    background: rgba(199, 71, 109, 0.1);
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: #c7476d !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+    background: #c7476d !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(199, 71, 109, 0.2);
+}
+
+
+
+/* ================= 3D NAME FLOATING ANIMATION SETUP ================= */
+.fiancee-name-3d-wrapper {
+    text-align: center;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.name-3d-box {
+    max-width: 480px;
+    width: 90%;
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Soft floating effect loop */
+    animation: floatName3D 3s ease-in-out infinite; 
+}
+
+.name-3d-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(199, 71, 109, 0.15); /* Soft pink neon shadow drop */
+}
+
+.heart-badge {
+    color: #c7476d;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+@keyframes floatName3D {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); } /* 3D text smoothly moves up and down */
+}
+
+
+/* ================= LIGHT & DARK MODE VARIABLE SYSTEM ================= */
+
+/* Toggle Button Position inside Navbar */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+#themeToggleBtn {
+    background: rgba(199, 71, 109, 0.1);
+    border: 1px solid rgba(199, 71, 109, 0.3);
+    color: #c7476d;
+    padding: 6px 14px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+#themeToggleBtn:hover {
+    background: #c7476d;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(199, 71, 109, 0.2);
+}
+
+/* ─── DARK MODE CORE STYLES (When .dark-theme is active) ─── */
+body.dark-theme {
+    background: #1a0f16 !important; /* Premium Dark Velvet/Chocolate tone */
+    color: #fff5f7 !important;
+}
+
+body.dark-theme .navbar {
+    background: rgba(26, 15, 22, 0.7) !important;
+    border-bottom: 1px solid rgba(199, 71, 109, 0.2) !important;
+}
+
+body.dark-theme .menu-list li a {
+    color: #f4d1dc !important;
+}
+body.dark-theme .menu-list li a:hover,
+body.dark-theme .menu-list li a.active-nav {
+    color: #ff6b8b !important;
+}
+
+body.dark-theme .card,
+body.dark-theme .question-card,
+body.dark-theme .final-card,
+body.dark-theme .dynamic-card,
+body.dark-theme .dream-card,
+body.dark-theme .value-item,
+body.dark-theme .proposal-chat-container,
+body.dark-theme .about-intro-box {
+    background: rgba(35, 20, 30, 0.9) !important; /* Dark Mode Glassmorphism */
+    border: 1px solid rgba(199, 71, 109, 0.3) !important;
+    color: #fff5f7 !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-theme .card p,
+body.dark-theme .dynamic-card p,
+body.dark-theme .value-item p,
+body.dark-theme .dream-card p {
+    color: #dcbcc7 !important;
+}
+
+body.dark-theme .chat-messages-area {
+    background: #23141e !important;
+}
+
+body.dark-theme .incoming {
+    background: #2f1928 !important;
+    border-color: rgba(199, 71, 109, 0.3) !important;
+    color: #fff5f7 !important;
+}
+
+body.dark-theme .chat-input-bar,
+body.dark-theme .chat-input-bar input {
+    background: #1a0f16 !important;
+    color: #ffffff !important;
+    border-color: rgba(199, 71, 109, 0.3) !important;
+}
+
+body.dark-theme .countdown-wrapper {
+    background: rgba(199, 71, 109, 0.05) !important;
+    border-color: rgba(199, 71, 109, 0.3) !important;
+}
+
+body.dark-theme .time-block span {
+    color: #ff6b8b !important;
+    text-shadow: 0 0 10px rgba(255, 107, 139, 0.3);
+}
+
+body.dark-theme .quiz-options button {
+    background: #2a1824 !important;
+    color: #fff5f7 !important;
+    border-color: rgba(199, 71, 109, 0.3) !important;
+}
+body.dark-theme .quiz-options button:hover {
+    background: #c7476d !important;
+}
+
+
+/* ================= CRITICAL HOME PAGE DARK MODE FIX ================= */
+
+/* डार्क मोड ऑन होने पर होम पेज (Hero Section) का बैकग्राउंड बदलने के लिए */
+body.dark-theme .hero {
+    background: 
+        radial-gradient(circle at top left, #301423, transparent 40%),
+        radial-gradient(circle at bottom right, #25121c, transparent 40%),
+        #1a0f16 !important; /* पुराना लाइट पिंक ग्रेडिएंट हटाकर डार्क वेलवेट ग्लो सेट किया */
+}
+
+/* डार्क मोड में होम पेज का मुख्य बड़ा टेक्स्ट सफेद चमकेगा */
+body.dark-theme .hero h1 {
+    color: #ffffff !important;
+}
+
+/* डार्क मोड में अरबी टेक्स्ट और भी शानदार नियॉन वाइट चमकेगा */
+body.dark-theme .arabic-title-3d {
+    color: #ffffff !important;
+    text-shadow: 
+        0 1px 0 #444,
+        0 2px 0 #333,
+        0 5px 15px rgba(255, 107, 139, 0.4) !important;
+}
+
+
+
+/* ================= 100% TEXT FLOATING ANIMATION ONLY (NO DESIGN CHANGE) ================= */
+
+/* 1. Arabic Text aur My Special Person ko ek sath aaram se upar-niche chalane ke liye */
+.hero-content h1, 
+.hero-content h1 span,
+#herName {
+    display: inline-block !important;
+    /* 3.5 seconds me smoothly upar-niche float karega */
+    animation: textFloatMagic 3.5s ease-in-out infinite !important; 
+}
+
+/* 2. Urdu Name "مبشرہ خاتون" ko independent romantic pulsing wave dene ke liye */
+.hero-content h1:last-of-type,
+.hero-content h1 br + span,
+.hero-content h1 + p + span {
+    display: inline-block !important;
+    /* Thoda alag time loop taaki cinematic wave banti rahe */
+    animation: textFloatMagic 4s ease-in-out infinite !important; 
+}
+
+/* Base Engine: Text ko bina coordinates distort kiye hawa me udane ka logic */
+@keyframes textFloatMagic {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-8px) scale(1.01); /* Smooth 8px upar uthega bina boundary thode */
+    }
+}
+
+
+/* ================= ADVANCED 3D FLOATING TILT & WAVE SYSTEM ================= */
+
+/* Hero section ko 3D perspective depth dena taaki rotations real lagein */
+.hero-content {
+    perspective: 1000px !important;
+    transform-style: preserve-3d !important;
+}
+
+/* 1. "السلام علیکم" aur "My Special Person" ko 3D Tilt Wave me chalane ke liye */
+.hero-content h1, 
+#herName {
+    display: inline-block !important;
+    transform-style: preserve-3d !important;
+    /* 4 seconds me real 3D paper tilt animation */
+    animation: advanced3DTiltWave 4s ease-in-out infinite !important;
+}
+
+/* 2. Urdu Name "مبشرہ خاتون" ko ek special independent 3D Pulse aur Swing dene ke liye */
+.hero-content h1:last-of-type,
+.hero-content h1 br + span,
+.hero-content h1 + p + span {
+    display: inline-block !important;
+    transform-style: preserve-3d !important;
+    /* Isme 4.5 seconds ka delay grid loop hai taaki dono text alag direction me jhulon ki tarah dikhein */
+    animation: advanced3DTiltWave 4.5s ease-in-out infinite !important;
+    animation-delay: 0.3s !important;
+}
+
+/* 🚀 MAIN 3D KINETIC ENGINE (Bina layout badle 3D me text ko ghumana) */
+@keyframes advanced3DTiltWave {
+    0%, 100% {
+        /* Shuruat ekdum flat normal look se */
+        transform: translateY(0) rotateX(0deg) rotateY(0deg) scale(1);
+    }
+    25% {
+        /* Halka sa upar uthega aur left corner thoda aage aayega */
+        transform: translateY(-6px) rotateX(4deg) rotateY(-4deg) scale(1.01);
+    }
+    50% {
+        /* Sabse unche point par thoda right side me tilt hoga */
+        transform: translateY(-10px) rotateX(-3deg) rotateY(5deg) scale(1.02);
+    }
+    75% {
+        /* Niche aate waqt ek soft smooth twist wave */
+        transform: translateY(-4px) rotateX(2deg) rotateY(-2deg) scale(1.01);
+    }
+}
+
+/* .main-btn, .quiz-options button, .yes-btn, .talk-btn, .menu-list li a, .corner-theme-btn { */
+    /* cursor: pointer; */
+/* } */
+
+
+/* ================= NEW: PREMIUM EXTRA BIG TIMELINE STYLING ================= */
+
+.timeline-main-card {
+    width: min(750px, 96%) !important; /* टाइमलाइन बॉक्स का साइज़ और बड़ा किया */
+    padding: 40px 30px !important;
+}
+
+.timeline-subtitle {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: #624452 !important;
+    margin-bottom: 35px !important;
+}
+
+/* मुख्य वर्टिकल लाइन को और गहरा और ग्लोइंग बनाया */
+.premium-timeline-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    padding-left: 35px; /* लेफ्ट साइड में कस्टमाइज़्ड स्पेसिंग */
+    box-sizing: border-box;
+}
+
+.timeline-vertical-line-new {
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    left: 15px;
+    width: 3px;
+    background: linear-gradient(to bottom, #f4d1dc, #c7476d, #f4d1dc);
+    box-shadow: 0 0 8px rgba(199, 71, 109, 0.2);
+}
+
+/* प्रत्येक टाइमलाइन स्टेप को एक प्रीमियम बड़े 3D कार्ड का रूप दिया */
+.timeline-step-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid rgba(244, 209, 220, 0.8);
+    padding: 25px 25px 25px 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(100, 40, 60, 0.03);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* अंतिम कार्ड का मार्जिन बॉटम कम किया */
+.timeline-step-card:last-child {
+    margin-bottom: 10px;
+}
+
+/* टच या होवर करने पर खूबसूरत 3D लिफ्ट और गुलाबी नियॉन ग्लो आएगा */
+.timeline-step-card:hover {
+    transform: translateX(5px) translateY(-3px);
+    border-color: #c7476d;
+    box-shadow: 0 12px 30px rgba(199, 71, 109, 0.12);
+}
+
+/* टाइमलाइन के गोल छल्ले (Badges) को और बड़ा और आकर्षक बनाया */
+.timeline-step-badge {
+    position: absolute;
+    left: -35px; /* वर्टिकल लाइन के ठीक ऊपर परफेक्ट सेंटर अलाइन */
+    top: 24px;
+    width: 32px;
+    height: 32px;
+    background: #ffffff;
+    border: 2px solid #c7476d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    z-index: 2;
+    box-shadow: 0 3px 10px rgba(199, 71, 109, 0.2);
+}
+
+/* कंटेंट टेक्स्ट को बड़ा और डार्क साफ़ किया */
+.timeline-step-content h4 {
+    font-family: 'Playfair Display', serif;
+    color: #a8385c;
+    font-size: 19px !important; /* हेडिंग बड़ी की */
+    font-weight: 700;
+    margin-bottom: 8px !important;
+}
+
+.timeline-step-content p {
+    font-size: 15px !important; /* पैराग्राफ टेक्स्ट बड़ा और साफ़ किया */
+    line-height: 1.7 !important;
+    color: #3b2430 !important;
+    margin-bottom: 0 !important;
+}
+
+/* डार्क मोड के लिए स्पेशल 3D कलर्स सपोर्ट */
+body.dark-theme .timeline-step-card {
+    background: rgba(35, 20, 30, 0.9) !important;
+    border-color: rgba(199, 71, 109, 0.4) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+body.dark-theme .timeline-step-content h4 {
+    color: #ff6b8b !important;
+}
+body.dark-theme .timeline-step-content p {
+    color: #dcbcc7 !important;
+}
+body.dark-theme .timeline-step-badge {
+    background: #23141e !important;
+}
+
+/* मोबाइल स्क्रीन के लिए 100% रिस्पॉन्सिव */
+@media screen and (max-width: 600px) {
+    .timeline-main-card {
+        padding: 30px 15px !important;
+    }
+    .premium-timeline-wrapper {
+        padding-left: 28px;
+    }
+    .timeline-vertical-line-new {
+        left: 10px;
+    }
+    .timeline-step-badge {
+        left: -28px;
+        width: 28px;
+        height: 32px;
+        font-size: 14px;
+    }
+    .timeline-step-card {
+        padding: 20px 15px;
+    }
+}
+
+
+/* ================= NEW: FIANCEE BEAUTY PRAISE CARD STYLING ================= */
+
+.gallery-main-card {
+    width: min(720px, 96%) !important;
+}
+
+.beauty-praise-box {
+    background: linear-gradient(135deg, #fffcfd, #fff0f3);
+    border: 1px solid rgba(244, 209, 220, 0.9);
+    border-top: 4px solid #c7476d; /* टॉप पर डार्क पिंक पट्टी */
+    padding: 30px 25px;
+    border-radius: 20px;
+    margin-top: 35px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(199, 71, 109, 0.05);
+    animation: smoothPulseGlow 3s ease-in-out infinite;
+}
+
+.praise-heart-icon {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.beauty-praise-box h4 {
+    font-family: 'Playfair Display', serif;
+    color: #a8385c;
+    font-size: 18px !important;
+    font-weight: 700;
+    margin-bottom: 15px !important;
+}
+
+/* शायरी/मुख्य पंक्ति का स्टाइल */
+.praise-shayari {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+    color: #a8385c !important;
+    margin-bottom: 20px !important;
+    padding: 0 10px;
+}
+
+/* नीचे के पैराग्राफ का बड़ा और साफ़ स्टाइल */
+.praise-text {
+    font-size: 15px !important;
+    line-height: 1.8 !important;
+    color: #4a333d !important;
+    text-align: justify; /* टेक्स्ट दोनों तरफ से बराबर दिखेगा */
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0 !important;
+}
+
+/* डार्क मोड के लिए स्पेशल कंपैटिबिलिटी */
+body.dark-theme .beauty-praise-box {
+    background: linear-gradient(135deg, #23141e, #1a0f16) !important;
+    border-color: rgba(199, 71, 109, 0.3) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5) !important;
+}
+body.dark-theme .beauty-praise-box h4 {
+    color: #ff6b8b !important;
+}
+body.dark-theme .praise-shayari {
+    color: #ff6b8b !important;
+}
+body.dark-theme .praise-text {
+    color: #dcbcc7 !important;
+}
+
+/* हल्का सा चमकने वाला इफ़ेक्ट */
+@keyframes smoothPulseGlow {
+    0%, 100% { box-shadow: 0 10px 30px rgba(199, 71, 109, 0.05); }
+    50% { box-shadow: 0 10px 35px rgba(199, 71, 109, 0.15); }
+}
+
+@media screen and (max-width: 600px) {
+    .beauty-praise-box {
+        padding: 20px 15px;
+    }
+    .praise-text {
+        text-align: left; /* मोबाइल पर लेफ्ट अलाइन */
+    }
+}
+
+
+/* ================= 100% PERFECT BLANK SPACE REMOVER FIX ================= */
+
+/* 1. HTML aur Body ko screen ki sachhi unchai par strictly lock karna */
+html, body {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    background-color: #fff5f7 !important; /* Light mode blank space patch */
+    overflow: hidden !important; /* CRITICAL: Isse neeche ka saala faltu blank space jad se khatam ho jayega */
+}
+
+/* Dark mode me bhi blank space ka background black rahega */
+body.dark-theme {
+    background-color: #1a0f16 !important;
+}
+
+/* 2. Udte hue dilon ko background me block rakhna taaki space na badhe */
+.hearts {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh !important;
+    overflow: hidden !important;
+    z-index: 0;
+    pointer-events: none !important;
+}
+
+/* 3. Sabhi sections ko unki hadd me scrollable aur perfectly fit rakhna */
+.section {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    width: 100% !important;
+    overflow-y: auto !important; /* Content bada hone par sirf card ke andar scroll hoga, poora page neeche nahi bhagega */
+    padding: 90px 20px 30px 20px !important;
+    box-sizing: border-box !important;
+    display: none;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.section.active {
+    display: flex !important;
+}
+
+/* Home section ko screen ke visual area me center karna */
+.hero.section {
+    justify-content: center !important;
+    padding-top: 100px !important;
+}
+
+/* ================= 100% FIXED: CHAT VISIBILITY SYSTEM ================= */
+
+/* 1. Main body ko clean rakhna aur side scroll rokna */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #fff5f7 !important;
+    overflow-x: hidden !important; /* Side ka faltu scroll band rahega */
+}
+
+body.dark-theme {
+    background-color: #1a0f16 !important;
+}
+
+/* 2. Home page section ko azaad karna taaki neeche daba chat box bahar aaye */
+.hero.section {
+    min-height: 100vh !important;
+    height: auto !important; /* ─── CRITICAL FIX: Isse chat box turant wapas bahar aa jayega ─── */
+    display: none;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important; /* Content perfectly upar se line me dikhega */
+    padding: 100px 20px 60px 20px !important;
+    box-sizing: border-box !important;
+}
+
+.hero.section.active {
+    display: flex !important;
+}
+
+/* 3. Udte hue dilon ko background me visual area me hi rakhna taaki blank space na bane */
+.hearts {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh !important;
+    overflow: hidden !important;
+    z-index: 0;
+    pointer-events: none !important;
+}
+
+/* 4. Chat box container ko layout me perfectly set rakhna */
+.proposal-chat-container {
+    margin: 45px auto 20px auto !important;
+    position: relative !important;
+    z-index: 10 !important;
+    width: 100% !important;
+    max-width: 420px !important;
+}
+
+
+/* ================= NEW: PREMIUM MESSAGE CARD & SHAYARI GLOW ================= */
+
+.premium-message-card {
+    width: min(600px, 95%) !important;
+    padding: 40px 30px !important;
+    background: linear-gradient(135deg, #ffffff, #fffcfd) !important;
+    border-radius: 26px !important;
+    box-shadow: 0 15px 40px rgba(199, 71, 109, 0.06) !important;
+    border: 1px solid rgba(244, 209, 220, 0.8) !important;
+}
+
+.romantic-page-title {
+    font-family: 'Playfair Display', serif;
+    color: #a8385c;
+    font-size: 26px !important;
+    font-weight: 700;
+    margin-bottom: 20px !important;
+}
+
+.message-content-flow p {
+    font-size: 15.5px !important;
+    line-height: 1.8 !important;
+    color: #4a333d !important;
+    text-align: justify;
+    margin-bottom: 15px !important;
+}
+
+/* Special Shayari Highlight Bubble */
+.shayari-highlight-bubble {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+    color: #a8385c !important;
+    background: linear-gradient(135deg, #fff5f7, #ffeef2);
+    padding: 18px 20px;
+    border-left: 4px solid #c7476d;
+    border-radius: 12px;
+    text-align: center !important;
+    margin: 25px 0 !important;
+    box-shadow: inset 0 0 10px rgba(199, 71, 109, 0.02);
+}
+
+/* Dark theme styling for compatibility */
+body.dark-theme .premium-message-card {
+    background: #1a0f16 !important;
+    border-color: rgba(199, 71, 109, 0.2) !important;
+}
+body.dark-theme .romantic-page-title,
+body.dark-theme .shayari-highlight-bubble {
+    color: #ff6b8b !important;
+}
+body.dark-theme .shayari-highlight-bubble {
+    background: rgba(43, 26, 36, 0.5) !important;
+}
+body.dark-theme .message-content-flow p {
+    color: #dcbcc7 !important;
+}
+
+@media screen and (max-width: 600px) {
+    .premium-message-card {
+        padding: 30px 15px !important;
+    }
+    .message-content-flow p {
+        text-align: left;
+    }
+}
+
+
+/* ================= NEW: PREMIUM KHWAHISH CARD & EMOTION GLOW ================= */
+
+.premium-khwahish-card {
+    width: min(600px, 95%) !important;
+    padding: 40px 30px !important;
+    background: linear-gradient(135deg, #ffffff, #fffcfd) !important;
+    border-radius: 26px !important;
+    box-shadow: 0 15px 40px rgba(199, 71, 109, 0.06) !important;
+    border: 1px solid rgba(244, 209, 220, 0.8) !important;
+}
+
+/* Special Romantic Shayari Bubble */
+.romantic-emotion-bubble {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+    color: #a8385c !important;
+    background: linear-gradient(135deg, #fff5f7, #ffeef2);
+    padding: 18px 20px;
+    border-left: 4px solid #c7476d;
+    border-radius: 12px;
+    text-align: center !important;
+    margin: 25px 0 !important;
+    box-shadow: inset 0 0 10px rgba(199, 71, 109, 0.02);
+}
+
+/* Aakhri laal line ko bada aur bold karne ke liye */
+.highlight-love-line {
+    font-weight: 600 !important;
+    color: #c7476d !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    margin-top: 20px !important;
+    background: rgba(255, 240, 243, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Dark theme support for compatibility */
+body.dark-theme .premium-khwahish-card {
+    background: #1a0f16 !important;
+    border-color: rgba(199, 71, 109, 0.2) !important;
+}
+body.dark-theme .romantic-emotion-bubble {
+    color: #ff6b8b !important;
+    background: rgba(43, 26, 36, 0.5) !important;
+}
+body.dark-theme .highlight-love-line {
+    color: #ff6b8b !important;
+    background: rgba(199, 71, 109, 0.1) !important;
+}
+
+
+/* ================= NEW: PREMIUM PROPOSAL CARD & PULSE HEART GLOW ================= */
+
+.premium-proposal-card {
+    width: min(600px, 95%) !important;
+    padding: 45px 35px !important;
+    background: linear-gradient(135deg, #ffffff, #fffcfd) !important;
+    border-radius: 28px !important;
+    box-shadow: 0 15px 45px rgba(199, 71, 109, 0.08) !important;
+    border: 1px solid rgba(244, 209, 220, 0.8) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 3D धड़कने वाला जादुई दिल (Pulse Animation) */
+.glowing-pulse-heart {
+    font-size: 55px;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: heartThrobPulse 1.2s infinite cubic-bezier(0.215, 0.610, 0.355, 1);
+    filter: drop-shadow(0 0 12px rgba(199, 71, 109, 0.3));
+    user-select: none;
+}
+
+@keyframes heartThrobPulse {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.18); }
+    60% { transform: scale(1); }
+    80% { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}
+
+.main-question-line {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px !important;
+    font-weight: 600 !important;
+    color: #a8385c !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+}
+
+.proposal-sub-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.promise-tag-line {
+    font-size: 15.5px;
+    color: #4a333d;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    background: rgba(255, 240, 243, 0.4);
+    padding: 6px 18px;
+    border-radius: 50px;
+    border: 1px solid rgba(244, 209, 220, 0.3);
+    transition: all 0.3s ease;
+}
+
+.promise-tag-line:hover {
+    transform: scale(1.04);
+    background: rgba(255, 240, 243, 0.8);
+    border-color: #c7476d;
+}
+
+/* बटन्स का लेआउट और 3D लिफ्ट इफेक्ट */
+.proposal-buttons-fix {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+    flex-wrap: wrap;
+}
+
+.modern-3d-yes {
+    background: linear-gradient(135deg, #c7476d, #a8385c) !important;
+    color: white !important;
+    padding: 12px 35px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    border: none !important;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(199, 71, 109, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.modern-3d-yes:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 10px 25px rgba(199, 71, 109, 0.45) !important;
+}
+
+.modern-3d-talk {
+    background: linear-gradient(135deg, #ffeef2, #fff5f7) !important;
+    color: #4a333d !important;
+    padding: 12px 25px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border-radius: 50px !important;
+    border: 1px solid #f4d1dc !important;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(100, 40, 60, 0.03) !important;
+    transition: all 0.3s ease !important;
+}
+
+.modern-3d-talk:hover {
+    background: #fff5f7 !important;
+    border-color: #c7476d !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Dark mode compatibility */
+body.dark-theme .premium-proposal-card { background: #1a0f16 !important; border-color: rgba(199, 71, 109, 0.2) !important; }
+body.dark-theme .main-question-line { color: #ff6b8b !important; }
+body.dark-theme .promise-tag-line { color: #dcbcc7; background: rgba(43, 26, 36, 0.5) !important; border-color: rgba(199, 71, 109, 0.1); }
+body.dark-theme .modern-3d-talk { background: #23141e !important; color: #dcbcc7 !important; border-color: rgba(199, 71, 109, 0.2) !important; }
+
+
+
+/* ================= NEW: FIANCE SHARMAANE WALA BOX DESIGN ================= */
+
+.fiance-sharm-box {
+    background: linear-gradient(135deg, #fffafb, #fff0f3);
+    border: 1px dashed rgba(199, 71, 109, 0.5);
+    border-radius: 18px;
+    padding: 20px 22px;
+    margin: 15px auto;
+    text-align: left !important;
+    box-shadow: 0 8px 25px rgba(199, 71, 109, 0.02);
+    width: 100%;
+}
+
+.sharm-box-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #a8385c;
+    font-size: 15.5px !important;
+    font-weight: 700;
+    margin-bottom: 15px !important;
+    text-align: center !important;
+    letter-spacing: 0.5px;
+}
+
+.sharm-list-items {
+    list-style: none !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sharm-list-items li {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #4a333d !important;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sharm-list-items li b {
+    color: #c7476d;
+    font-weight: 600;
+}
+
+/* Dark mode configurations */
+body.dark-theme .fiance-sharm-box {
+    background: linear-gradient(135deg, #23141e, #1d0e17) !important;
+    border-color: rgba(199, 71, 109, 0.3) !important;
+}
+body.dark-theme .sharm-box-title {
+    color: #ff6b8b !important;
+}
+body.dark-theme .sharm-list-items li {
+    color: #dcbcc7 !important;
+}
+body.dark-theme .sharm-list-items li b {
+    color: #ff6b8b;
+}
+
+
+
+/* ================= NEW: PREMIUM ROYAL 3D ENVELOPE STYLING ================= */
+
+.premium-final-card {
+    width: min(650px, 95%) !important;
+    padding: 45px 30px !important;
+    background: linear-gradient(135deg, #ffffff, #fffcfd) !important;
+    border-radius: 28px !important;
+    box-shadow: 0 15px 45px rgba(199, 71, 109, 0.08) !important;
+    border: 1px solid rgba(244, 209, 220, 0.8) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.royal-final-title {
+    font-family: 'Playfair Display', serif;
+    color: #a8385c;
+    font-size: 28px !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px !important;
+}
+
+.final-subtitle-text {
+    font-size: 15.5px !important;
+    color: #7d5c6b !important;
+    margin-bottom: 30px !important;
+    font-style: italic;
+}
+
+/* 3D लिफाफे का मुख्य ढांचा और फ्लोटिंग एनीमेशन */
+.royal-envelope-wrapper {
+    width: 140px;
+    height: 100px;
+    margin: 20px auto 35px auto;
+    perspective: 600px;
+    cursor: pointer;
+    animation: envelopeFloatNew 2.5s ease-in-out infinite;
+}
+
+@keyframes envelopeFloatNew {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+.royal-envelope {
+    width: 100%;
+    height: 100%;
+    background: #fdf2f4;
+    position: relative;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 30px rgba(199, 71, 109, 0.15);
+    border: 1px solid #f4d1dc;
+}
+
+/* लिफाफे का त्रिकोणीय ऊपर का फ्लैप */
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-top: 55px solid #f2cfd9;
+    z-index: 3;
+    transform-origin: top;
+    transition: transform 0.4s ease;
+}
+
+/* लिफाफे का निचला मुख्य हिस्सा */
+.envelope-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 70px solid #f4d1dc;
+    border-right: 70px solid #f4d1dc;
+    border-bottom: 50px solid #ebd2d9;
+    border-radius: 0 0 12px 12px;
+    z-index: 2;
+}
+
+/* लिफाफे के बीच का खूबसूरत दिल वाला लॉक */
+.envelope-heart-lock {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    font-size: 26px;
+    z-index: 4;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+    transition: all 0.3s ease;
+}
+
+.royal-envelope-wrapper:hover .envelope-heart-lock {
+    transform: translate(-50%, -50%) scale(1.2);
+    text-shadow: 0 0 10px rgba(199, 71, 109, 0.4);
+}
+
+/* ओपन बटन का चमकीला नियॉन ग्लो */
+.glowing-envelope-btn {
+    background: linear-gradient(135deg, #c7476d, #a8385c) !important;
+    padding: 13px 38px !important;
+    font-size: 15px !important;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 25px rgba(199, 71, 109, 0.3) !important;
+    animation: buttonGlowPulse 2s infinite;
+}
+
+@keyframes buttonGlowPulse {
+    0% { box-shadow: 0 6px 20px rgba(199, 71, 109, 0.3); }
+    50% { box-shadow: 0 6px 30px rgba(199, 71, 109, 0.6); }
+    100% { box-shadow: 0 6px 20px rgba(199, 71, 109, 0.3); }
+}
+
+/* Dark mode specifications */
+body.dark-theme .premium-final-card { background: #1a0f16 !important; border-color: rgba(199, 71, 109, 0.2) !important; }
+body.dark-theme .royal-final-title { color: #ff6b8b !important; }
+body.dark-theme .final-subtitle-text { color: #bca0ab !important; }
+body.dark-theme .royal-envelope { background: #23141e; border-color: rgba(199, 71, 109, 0.3); }
+body.dark-theme .envelope-flap { border-top-color: #381b2b; }
+body.dark-theme .envelope-body { border-left-color: #2b1522; border-right-color: #2b1522; border-bottom-color: #23111b; }
+
+
+/* ================= NEW: TIMELINE FINAL WEDDING STEP GLOW STYLING ================= */
+
+/* Aakhri card ko thoda zyada bright aur glowing banaya */
+.final-wedding-step-card {
+    background: linear-gradient(135deg, #ffffff, #fff5f7) !important;
+    border: 1px solid rgba(199, 71, 109, 0.4) !important;
+    box-shadow: 0 10px 25px rgba(199, 71, 109, 0.08) !important;
+    animation: timelineFinalCardGlow 3s ease-in-out infinite;
+}
+
+/* Card ke andar ki chhotii romantic shayari line */
+.timeline-mini-shayari {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    color: #a8385c !important;
+    margin-top: 15px !important;
+    text-align: center !important;
+    background: rgba(255, 240, 243, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    border-left: 3px solid #c7476d;
+}
+
+@keyframes timelineFinalCardGlow {
+    0%, 100% { box-shadow: 0 10px 25px rgba(199, 71, 109, 0.06); }
+    50% { box-shadow: 0 10px 30px rgba(199, 71, 109, 0.18); border-color: #c7476d; }
+}
+
+/* Dark mode capability support */
+body.dark-theme .final-wedding-step-card {
+    background: linear-gradient(135deg, #23141e, #1d0f17) !important;
+    border-color: rgba(199, 71, 109, 0.4) !important;
+}
+body.dark-theme .timeline-mini-shayari {
+    color: #ff6b8b !important;
+    background: rgba(43, 26, 36, 0.6) !important;
+}
+
+
+
+
+/* ==============================================================================
+   🌟 NEW: PREMIUM BOTTOM-LEFT TRANSPARENT DARK MODE ICON ONLY
+   ============================================================================== */
+.corner-theme-btn {
+    position: fixed !important;
+    bottom: 460px !important;    /* Screen ke niche se perfect doori */
+    left: 25px !important;      /* ─── FIXED: Right se hata kar hamesha ke liye LEFT me shift kiya ─── */
+    right: auto !important;     /* Purani right side setting ko bypass kiya */
+    
+    width: 45px !important;
+    height: 45px !important;
+    
+    /* ─── BUTTON BACKGROUND REMOVED (SIRF ICON DIKHEGA) ─── */
+    background: transparent !important; /* Poora background colour saaf kiya */
+    color: #c7476d !important;          /* Light mode me icon ka rang haseen gulabi rahega */
+    border: none !important;
+    outline: none !important;
+    
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: none !important;        /* Faltu ka pichhla shadow khatam kiya */
+    z-index: 99999 !important;          /* Yeh humesha sabhi layers ke upar chamkega */
+    cursor: pointer !important;
+    transition: transform 0.3s ease, color 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+/* Dark mode activate hone par sirf icon ka rang change hoga */
+body.dark-theme .corner-theme-btn {
+    color: #ff6b8b !important;          /* Dark mode me icon gulabi neon ki tarah chamkega */
+}
+
+/* Icon par mouse le jaane par haseen chhotii bouncing animation */
+.corner-theme-btn:hover {
+    transform: scale(1.2) rotate(15deg) !important;
+}
+
+/* Icon ka size perfectly set rakhne ke liye */
+.corner-theme-btn svg, .corner-theme-btn i {
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 26px !important;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.15)) !important;
+}
+
+
+
+/* ================= FIXED: BIG SIZE DARK MODE ICON SWITCHER ================= */
+.corner-theme-btn svg {
+    width: 36px !important;       /* ─── ICON SIZE BADA KIYA (36px) ─── */
+    height: 36px !important;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+/* Dark mode me classes ko toggle karne ka engine */
+body.dark-theme .theme-icon-moon {
+    display: none !important;     /* Dark mode me chand chhip jayega */
+}
+
+body.dark-theme .theme-icon-sun {
+    display: block !important;    /* Dark mode me suraj prakat ho jayega */
+    color: #ffb834 !important;    /* Suraj ka rang pyara sunehra gold ho jayega */
+}
+
+
+
+
+/* ==============================================================================
+   👑 THE FINAL ABSOLUTE STABLE LAYOUT ENGINE (INDIVIDUAL MOBILE MARGINS)
+   ============================================================================== */
+
+/* 💻 1. JAB WEBSITE LAPTOP / DESKTOP PAR KHULEGI (Laptop Formate Fixed) */
+.premium-message-card, 
+.premium-khwahish-card, 
+.premium-proposal-card, 
+.premium-final-card {
+    margin-top: 140px !important; /* Laptop par sabhi cards bilkul sahi jagah par rahenge */
+    padding-top: 30px !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* 📱 2. JAB WEBSITE MOBILE PHONE PAR KHULEGI (Har Page Ki Manchahi Alag Margin) */
+@media screen and (max-width: 768px) {
+
+    /* (A) शायरी वाला मैसेज पेज ("A Little Something...") - Mobile Margin */
+    .premium-message-card {
+        margin-top: 250px !important; /* Iska size aapke hisab se perfect 750px lock kiya */
+        padding-top: 25px !important;
+    }
+
+    /* (B) ख्वाहिश वाला पेज ("Ek Chhoti Si Khwahish") - Mobile Margin */
+    .premium-khwahish-card {
+        margin-top: 270px !important; /* Agar ise badhana ya ghatana ho toh yahan number badlein */
+        padding-top: 25px !important;
+    }
+
+    /* (C) प्रपोज़ल सवाल वाला पेज ("Kya Aap Mujhe...") - Mobile Margin */
+    .premium-proposal-card {
+        margin-top: 450px !important; /* Agar ise thoda upar-niche karna ho toh yahan badlein */
+        padding-top: 25px !important;
+    }
+
+    /* (D) लव-लेटर फाइनल पेज ("Open Letter 💌") - Mobile Margin */
+    .premium-final-card {
+        margin-top: 950px !important; /* Kyuki letter bada hai, ise aap apne hisab se set kar sakte hain */
+        padding-top: 25px !important;
+    }
+
+}
+
+
+/* =========================================================
+   FINAL MOBILE NAVIGATION FIX
+   ========================================================= */
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 100000 !important;
+    padding: 8px 0 !important;
+    box-sizing: border-box !important;
+}
+
+.nav-container {
+    width: min(1200px, calc(100% - 20px)) !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    min-width: 0 !important;
+}
+
+.colorlib-footer {
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    display: flex !important;
+}
+
+.colorlib-footer ul {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 5px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.colorlib-footer ul li a.foru {
+    width: 29px !important;
+    height: 29px !important;
+    min-width: 29px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.colorlib-footer ul li a.foru svg {
+    width: 14px !important;
+    height: 14px !important;
+}
+
+.menu-list {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: clamp(10px, 2.5vw, 28px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.menu-list::-webkit-scrollbar { display: none !important; }
+
+.menu-list li { flex: 0 0 auto !important; }
+.menu-list li a {
+    display: block !important;
+    white-space: nowrap !important;
+    font-size: clamp(10px, 2.7vw, 14px) !important;
+    letter-spacing: clamp(.5px, .3vw, 2px) !important;
+    line-height: 1 !important;
+    padding: 8px 0 !important;
+}
+
+@media (max-width: 600px) {
+    .navbar { padding: 7px 0 !important; }
+    .nav-container { width: calc(100% - 12px) !important; gap: 6px !important; }
+    .colorlib-footer ul { gap: 3px !important; }
+    .colorlib-footer ul li a.foru {
+        width: 26px !important;
+        height: 26px !important;
+        min-width: 26px !important;
+        border-radius: 50% !important;
+    }
+    .colorlib-footer ul li a.foru svg { width: 13px !important; height: 13px !important; }
+    .menu-list { gap: 12px !important; }
+    .menu-list li a { font-size: 9px !important; letter-spacing: .4px !important; padding: 8px 0 !important; }
+
+    /* Never push content hundreds of pixels below the fixed navbar. */
+    .premium-message-card,
+    .premium-khwahish-card,
+    .premium-proposal-card,
+    .premium-final-card {
+        margin-top: 20px !important;
+        padding-top: 22px !important;
+    }
+
+    .section:not(.hero) {
+        padding-top: 78px !important;
+        padding-bottom: 35px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .colorlib-footer ul li a.foru {
+        width: 23px !important;
+        height: 23px !important;
+        min-width: 23px !important;
+    }
+    .colorlib-footer ul li a.foru svg { width: 12px !important; height: 12px !important; }
+    .menu-list { gap: 9px !important; }
+    .menu-list li a { font-size: 8px !important; }
+}
+
+
+/* Bottom corner controls - only requested additions */
+.corner-music-btn {
+    position: fixed !important;
+    left: 18px !important;
+    bottom: 18px !important;
+    right: auto !important;
+    top: auto !important;
+    width: 50px !important;
+    height: 50px !important;
+    border: 1px solid rgba(255,255,255,.45) !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, .78) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    color: #e83e73 !important;
+    font-size: 24px !important;
+    line-height: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    z-index: 100000 !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,.15) !important;
+}
+
+.corner-theme-btn {
+    position: fixed !important;
+    right: 18px !important;
+    bottom: 18px !important;
+    left: auto !important;
+    top: auto !important;
+    z-index: 100000 !important;
+}
+
+@media (max-width: 600px) {
+    .corner-music-btn {
+        left: 12px !important;
+        bottom: 12px !important;
+        width: 46px !important;
+        height: 46px !important;
+        font-size: 21px !important;
+    }
+    .corner-theme-btn {
+        right: 12px !important;
+        bottom: 12px !important;
+    }
+}
+
+
+/* Wedding countdown - added only for the November 2027 countdown */
+.wedding-countdown {
+	color:green ;
+    width: min(560px, 92vw);
+    margin: 24px auto 20px;
+    padding: 18px 18px 20px;
+    
+    border-radius: 22px;
+    background: rgba(255,255,255,.10);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+	
+
+}
+
+.wedding-countdown {
+    position: relative;
+    border-radius: 20px;
+    background: #fff;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Moving Tiranga snake border */
+.wedding-countdown::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 23px;
+    background: conic-gradient(
+        from 0deg,
+        #ff9933,
+        #ff9933 33%,
+        #ffffff 33%,
+        #ffffff 66%,
+        #138808 66%,
+        #138808 100%
+    );
+    animation: tirangaSnake 3s linear infinite;
+    z-index: -2;
+}
+
+/* Inner background */
+.wedding-countdown::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 17px;
+    background: #fff;
+    z-index: -1;
+}
+
+@keyframes tirangaSnake {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.wedding-countdown .countdown-title {
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: 400;
+    margin-bottom: 5px;
+	color:red;
+	font-weight: bold;
+	font-family:"Sofia", sans-serif;
+}
+.wedding-countdown .countdown-date {
+    font-size: 13px;
+    opacity: .9;
+    margin-bottom: 14px;
+}
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.countdown-box {
+    padding: 11px 6px;
+    border-radius: 15px;
+    background: rgba(255,255,255,.16);
+    border: 1px solid rgba(255,255,255,.22);
+}
+.countdown-box span {
+    display: block;
+    font-size: clamp(22px, 5vw, 34px);
+    line-height: 1;
+    font-weight: 800;
+}
+.countdown-box small {
+    display: block;
+    margin-top: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .4px;
+}
+@media (max-width: 480px) {
+    .wedding-countdown { padding: 15px 10px 16px; margin: 18px auto 16px; }
+    .countdown-grid { gap: 6px; }
+    .countdown-box { padding: 10px 3px; }
+    .countdown-box small { font-size: 9px; }
+}
+
+
+	.gallery-item {
+    position: relative;
+    border-radius: 20px;
+    background: #fff;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Moving Tiranga snake border */
+.gallery-item::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 23px;
+    background: conic-gradient(
+        from 0deg,
+        #ff9933,
+        #ff9933 33%,
+        #ffffff 33%,
+        #ffffff 66%,
+        #138808 66%,
+        #138808 100%
+    );
+    animation: tirangaSnake 3s linear infinite;
+    z-index: -2;
+}
+
+/* Inner background */
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 17px;
+    background: #fff;
+    z-index: -1;
+}
+
+@keyframes tirangaSnake {
+    to {
+        transform: rotate(660deg);
+    }
+}
+
+
+
+	.dream-card {
+    position: relative;
+    border-radius: 20px;
+    background: #fff;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Moving Tiranga snake border */
+.dream-card::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 23px;
+    background: conic-gradient(
+        from 0deg,
+        #ff9933,
+        #ff9933 33%,
+        #ffffff 33%,
+        #ffffff 66%,
+        #138808 66%,
+        #138808 100%
+    );
+    animation: tirangaSnake 3s linear infinite;
+    z-index: -2;
+}
+
+/* Inner background */
+.dream-card::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 17px;
+    background: #fff;
+    z-index: -1;
+}
+
+@keyframes tirangaSnake {
+    to {
+        transform: rotate(660deg);
+    }
+}
+
+
+
+
+/* =================================
+   ❤️ COUPLE CHAT BOX
+================================= */
+
+.couple-chat {
+    width: min(92%, 600px);
+    margin: 60px auto;
+    border-radius: 24px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(255, 105, 180, 0.25);
+    backdrop-filter: blur(12px);
+}
+
+/* Header */
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #ff6fae, #ff9acb);
+    color: white;
+}
+
+.chat-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.chat-header span {
+    font-size: 12px;
+}
+
+.online-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #00e676;
+    box-shadow: 0 0 12px #00e676;
+}
+
+/* Messages */
+
+.chat-messages {
+    height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    background: linear-gradient(
+        180deg,
+        #fff5fa,
+        #fff
+    );
+}
+
+.chat-welcome {
+    text-align: center;
+    color: #999;
+    margin: 160px 0;
+}
+
+/* Message */
+
+.chat-message {
+    display: flex;
+    margin: 10px 0;
+}
+
+.chat-message.me {
+    justify-content: flex-end;
+}
+
+.chat-message.her {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    max-width: 75%;
+    padding: 11px 15px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.me .message-bubble {
+    background: #ff6fae;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.her .message-bubble {
+    background: #f1f1f1;
+    color: #333;
+    border-bottom-left-radius: 4px;
+}
+
+.message-name {
+    font-size: 10px;
+    opacity: 0.7;
+    margin-bottom: 3px;
+}
+
+/* Typing */
+
+.typing-text {
+    height: 20px;
+    padding-left: 20px;
+    color: #999;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Input */
+
+.chat-input-area {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    background: white;
+    border-top: 1px solid #eee;
+}
+
+.chat-input-area input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 15px;
+    border-radius: 25px;
+    background: #f5f5f5;
+    font-size: 14px;
+}
+
+.emoji-btn,
+.send-btn {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.emoji-btn {
+    background: #fff0f6;
+}
+
+.send-btn {
+    background: #ff6fae;
+    color: white;
+    font-size: 18px;
+}
+
+.emoji-btn:hover,
+.send-btn:hover {
+    transform: scale(1.08);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .couple-chat {
+        width: 94%;
+        margin: 35px auto;
+        border-radius: 18px;
+    }
+
+    .chat-messages {
+        height: 350px;
+        padding: 14px;
+    }
+
+    .chat-header h2 {
+        font-size: 17px;
+    }
+
+    .message-bubble {
+        max-width: 82%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+.hearts-container {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 22px;
+    animation: heartFloat linear forwards;
+    opacity: 0;
+    filter: drop-shadow(0 0 5px rgba(255, 0, 80, 0.4));
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.7) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-50vh) translateX(40px) scale(1) rotate(15deg);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(-110vh) translateX(-40px) scale(1.2) rotate(-15deg);
+        opacity: 0;
+    }
+}
+
+
+
+
+.fiance-name {
+
+color:red;
+}
+
+
+.about-intro-box {
+    position: relative;
+    padding: 30px;
+    border-radius: 25px;
+    background: #fff;
+    overflow: hidden;
+
+}
+
+.about-intro-box::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+
+    background: conic-gradient(
+        transparent 0deg,
+        transparent 280deg,
+        #ff0055 300deg,
+        #ff4da6 320deg,
+        #ffd700 340deg,
+        #00c6ff 360deg
+    );
+
+    animation: snakeSpin 2s linear infinite;
+    z-index: 0;
+}
+.about-intro-box::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 21px;
+    background: white;
+    z-index: 1;
+}
+
+.about-intro-box > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes snakeSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+.value-item {
+    position: relative;
+    padding: 30px;
+    border-radius: 25px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.value-item::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+
+    background: conic-gradient(
+        transparent 0deg,
+        transparent 280deg,
+        #ff0055 300deg,
+        #ff4da6 320deg,
+        #ffd700 340deg,
+        #00c6ff 360deg
+    );
+
+    animation: snakeSpin 2s linear infinite;
+    z-index: 0;
+}
+
+.value-item::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 21px;
+    background: white;
+    z-index: 1;
+}
+
+.value-item > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes snakeSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}

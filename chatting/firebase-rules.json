@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "coupleChat": {
+      "messages": {
+        ".read": "auth != null && (auth.token.email == 'sanaulislam77@gmail.com' || auth.token.email == 'islamsanaul77@gmail.com')",
+        ".write": "auth != null && (auth.token.email == 'sanaulislam77@gmail.com' || auth.token.email == 'islamsanaul77@gmail.com')",
+        "$messageId": {
+          ".validate": "newData.hasChildren(['senderUid','senderName','senderEmail','text','createdAt']) && newData.child('senderUid').val() == auth.uid && newData.child('senderEmail').val() == auth.token.email && newData.child('text').isString() && newData.child('text').val().length > 0 && newData.child('text').val().length <= 1000"
+        }
+      }
+    }
+  }
+}

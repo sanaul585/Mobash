@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Private Chat ❤️</title>
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+<!-- <ul> और <li> के साथ अपग्रेडेड लव मेनू बार -->
+<nav class="chat-nav">
+  <a class="brand" href="index.html" onclick="switchSection('chat'); return false;">❤️ Our Love</a>
+  <ul class="nav-links" style="list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; align-items: center;">
+    <li><a href="../index.html#">HOME</a></li>
+    <li><a class="active" href="chat.html" id="menu-chat" onclick="switchSection('chat')">CHAT</a></li>
+    <li><a href="#" id="menu-love-note" onclick="switchSection('love-note')">💌 Love Note</a></li>
+    <li><a href="#" id="love-note-card" onclick="switchSection('love-story')">💌 Love story</a></li>
+  </ul>
+</nav>
+
+<!-- Love Note Section -->
+<section id="loveNoteSection" class="love-note-card content-fade" style="display: none;">
+    <div class="love-note-icon">💌</div>
+    <div class="love-note-content">
+        <span class="love-note-label">Aaj ka Love Note</span>
+        <p id="dailyLoveNote">
+            Tum meri favourite notification ho ❤️
+        </p>
+        <span class="love-note-from">
+            — Tumhara Sanaul ❤️
+        </span>
+		<!-- 💬 REALTIME TWO-WAY LOVE STATUS (ADD INSIDE LOVE NOTE CARD) -->
+<div class="status-zone" style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed rgba(233, 79, 138, 0.3); text-align: center;">
+    
+    <!-- दोनों के लाइव स्टेटस डिस्प्ले बॉक्स -->
+    <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap;">
+        <!-- 🙋‍♂️ आपका स्टेटस -->
+        <div style="background: rgba(255, 255, 255, 0.8); padding: 12px 20px; border-radius: 16px; border: 1px solid rgba(233, 79, 138, 0.2); min-width: 180px; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+            <div style="font-size: 11px; font-weight: 800; color: #8f7180; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Sanaul's Status 👑</div>
+            <span id="sanaulStatusText" style="font-size: 14px; font-weight: 700; color: #3d2631; font-style: italic;">Loading...</span>
+        </div>
+        
+        <!-- 🙋‍♀️ मंगेतर का स्टेटस -->
+        <div style="background: rgba(255, 255, 255, 0.8); padding: 12px 20px; border-radius: 16px; border: 1px solid rgba(233, 79, 138, 0.2); min-width: 180px; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+            <div style="font-size: 11px; font-weight: 800; color: var(--pink-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Fiancée's Status 🎀</div>
+            <span id="fianceeStatusText" style="font-size: 14px; font-weight: 700; color: var(--pink); font-style: italic;">Loading...</span>
+        </div>
+    </div>
+    
+    <!-- स्टेटस सेट करने का इनपुट बॉक्स (जो लॉगिन ईमेल के हिसाब से खुद तय करेगा किसका स्टेटस है) -->
+    <div style="display: flex; gap: 8px; justify-content: center; max-width: 360px; margin: 0 auto;">
+        <input type="text" id="loveStatusInput" placeholder="Update your current status..." 
+               style="flex: 1; padding: 10px 16px; border: 1px solid #ead5df; border-radius: 20px; outline: none; font-size: 13px;">
+        <button onclick="updateCoupleStatus()" 
+                style="background: linear-gradient(135deg, #e94f8a, #c93670); color: white; border: none; padding: 10px 18px; border-radius: 20px; font-size: 12px; font-weight: 800; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 10px rgba(233, 79, 138, 0.2);">
+            Set Status
+        </button>
+    </div>
+</div>
+
+    </div>
+    <button class="new-note-btn" onclick="showNewLoveNote()">
+        💖 New Note
+    </button>
+</section>
+
+<!-- Chat Card Section -->
+<section id="chatCardSection" class="chat-card content-fade">
+  <header class="chat-header">
+    <div class="profile">
+      <div class="avatar">❤️</div>
+      <div>
+        <h1>Our Private Chat</h1>
+        <p id="statusText">Loading chat...</p>
+      </div>
+    </div>
+    <button id="logoutBtn" class="logout-btn" hidden>Logout</button>
+  </header>
+
+  <div id="loginPanel" class="login-panel">
+    <div class="heart-mark">💌</div>
+    <h2>Welcome to our little world</h2>
+    <p>Login with your private account to use the real-time couple chat.</p>
+
+    <label>Email</label>
+    <input id="emailInput" type="email" placeholder="your@email.com" autocomplete="email">
+
+    <label>Password</label>
+    <input id="passwordInput" type="password" placeholder="Password" autocomplete="current-password">
+
+    <div class="auth-actions">
+      <button id="loginBtn" class="primary-btn">Login ❤️</button>
+      <button id="registerBtn" class="secondary-btn">Create account</button>
+    </div>
+
+    <p id="authMessage" class="auth-message"></p>
+    <p class="demo-note">Use one of the two approved Gmail accounts. First-time setup: click Create account with your shared password.</p>
+  </div>
+
+  <div id="chatPanel" class="chat-panel" hidden>
+    <div id="messages" class="messages" aria-live="polite"></div>
+    <div id="typingText" class="typing-text"></div>
+
+    <form id="messageForm" class="composer">
+      <button type="button" class="emoji-btn" id="emojiBtn" title="Add heart">❤️</button>
+      <input id="messageInput" type="text" maxlength="1000"
+             placeholder="Write something sweet..." autocomplete="off">
+      <button type="submit" class="send-btn" aria-label="Send message">➤</button>
+    </form>
+  </div>
+</section>
+  
+<!-- 📅 अलग सेक्शन: OUR LITTLE LOVE WORLD DASHBOARD GRID -->
+<section id="loveStory" class="custom-independent-section content-fade" style="display: none;">
+
+
+    <div class="section-title">
+        <span>💕</span>
+        <h2>Our Little Love World</h2>
+        <p>Just for you & me ❤️</p>
+    </div>
+
+    <div class="love-menu-grid">
+
+        <button class="love-menu-card" onclick="openLoveFeature('loveNotes')">
+            <span>💌</span>
+            <strong>Love Notes</strong>
+            <small>Little messages for you</small>
+        </button>
+
+        <button class="love-menu-card" onclick="openLoveFeature('whyLove')">
+            <span>💖</span>
+            <strong>Why I Love You</strong>
+            <small>Reasons from my heart</small>
+        </button>
+
+        <button class="love-menu-card" onclick="openLoveFeature('quiz')">
+            <span>🎮</span>
+            <strong>Our Quiz</strong>
+            <small>How well do you know us?</small>
+        </button>
+
+        <button class="love-menu-card" onclick="openLoveFeature('openWhen')">
+            <span>🌙</span>
+            <strong>Open When...</strong>
+            <small>For every mood</small>
+        </button>
+
+        <button class="love-menu-card" onclick="openLoveFeature('memories')">
+            <span>📸</span>
+            <strong>Our Memories</strong>
+            <small>Our beautiful moments</small>
+        </button>
+
+        <button class="love-menu-card" onclick="openLoveFeature('voice')">
+            <span>🎧</span>
+            <strong>My Voice</strong>
+            <small>Listen when you miss me</small>
+        </button>
+
+        <button class="love-menu-card" onclick="openLoveFeature('dreams')">
+            <span>✈️</span>
+            <strong>Our Dreams</strong>
+            <small>Future together</small>
+        </button>
+
+        <button class="love-menu-card" onclick="openLoveFeature('question')">
+            <span>💭</span>
+            <strong>Today's Question</strong>
+            <small>Let's talk about us</small>
+        </button>
+
+        <button class="love-menu-card" onclick="openLoveFeature('future')">
+            <span>💍</span>
+            <strong>Our Future</strong>
+            <small>Every second closer</small>
+        </button>
+
+        <button class="love-menu-card secret-menu"
+                onclick="openLoveFeature('secret')">
+            <span>🔐</span>
+            <strong>Only For You</strong>
+            <small>A secret from my heart</small>
+        </button>
+
+    </div>
+</section>
+
+
+<!-- Feature Popup -->
+<div id="loveFeatureModal" class="love-modal">
+
+    <div class="love-modal-content">
+
+        <button class="love-modal-close"
+                onclick="closeLoveFeature()">×</button>
+
+        <div id="loveFeatureContent"></div>
+
+    </div>
+
+</div>
+
+
+
+  <script src="chat.js"></script>
+  
+  
+  <!-- सुनिश्चित करें कि यह आपकी HTML फ़ाइल में सबसे नीचे मौजूद है -->
+<div id="imageLightbox" class="image-lightbox-modal" onclick="closeFullImage()">
+    <div class="lightbox-img-wrapper" onclick="event.stopPropagation()">
+        <button class="lightbox-close-btn" onclick="closeFullImage()">×</button>
+        <img id="lightboxTargetImg" src="" alt="Full Screen Memory">
+    </div>
+</div>
+</body>
+</html>

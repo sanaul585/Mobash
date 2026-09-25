@@ -1,0 +1,1425 @@
+* { box-sizing: border-box; }
+
+:root {
+  --pink: #e94f8a;
+  --pink-dark: #c93670;
+  --soft: #fff1f7;
+  --text: #3d2631;
+  --muted: #8f7180;
+  --border: rgba(233, 79, 138, .18);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 160, 200, .28), transparent 28%),
+    radial-gradient(circle at 90% 80%, rgba(255, 190, 220, .25), transparent 30%),
+    linear-gradient(135deg, #fff8fb, #ffeef5);
+}
+
+.chat-nav {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  background: rgba(255,255,255,.92);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 18px rgba(100, 30, 60, .07);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.brand {
+  color: var(--pink-dark);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #674554;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: var(--pink);
+}
+
+.chat-page {
+  width: min(50%, 760px);
+  margin: 38px auto 60px;
+}
+
+.chat-card {
+  overflow: hidden;
+  border-radius: 28px;
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(255,255,255,.9);
+  box-shadow: 0 24px 70px rgba(118, 45, 77, .16);
+}
+
+.chat-header {
+  min-height: 90px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #d83f78, #f477aa);
+  color: white;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.2);
+  font-size: 25px;
+}
+
+.chat-header h1 {
+  margin: 0 0 5px;
+  font-size: 21px;
+}
+
+.chat-header p {
+  margin: 0;
+  opacity: .9;
+  font-size: 12px;
+}
+
+.logout-btn {
+  border: 1px solid rgba(255,255,255,.5);
+  background: rgba(255,255,255,.13);
+  color: white;
+  border-radius: 999px;
+  padding: 8px 13px;
+  cursor: pointer;
+}
+
+.login-panel {
+  padding: 38px;
+  max-width: 480px;
+  margin: auto;
+  text-align: center;
+}
+
+.heart-mark {
+  font-size: 42px;
+}
+
+.login-panel h2 {
+  margin: 8px 0;
+}
+
+.login-panel > p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.login-panel label {
+  display: block;
+  text-align: left;
+  margin: 15px 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.login-panel input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #ead5df;
+  border-radius: 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+.login-panel input:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(233,79,138,.1);
+}
+
+.auth-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.primary-btn, .secondary-btn {
+  flex: 1;
+  border: 0;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.primary-btn {
+  color: white;
+  background: var(--pink);
+}
+
+.secondary-btn {
+  color: var(--pink-dark);
+  background: var(--soft);
+}
+
+.auth-message {
+  min-height: 20px;
+  color: #b22e61 !important;
+  font-size: 13px;
+}
+
+.demo-note {
+  font-size: 11px !important;
+}
+
+.chat-panel {
+  background: #fffafd;
+}
+
+.messages {
+  height: 510px;
+  overflow-y: auto;
+  padding: 22px;
+  scroll-behavior: smooth;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 206, 226, .22), transparent 25%),
+    #fffafd;
+}
+
+.empty-chat {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #b08c9c;
+  font-size: 14px;
+}
+
+.msg {
+  display: flex;
+  margin: 10px 0;
+}
+
+.msg.me { justify-content: flex-end; }
+.msg.them { justify-content: flex-start; }
+
+.bubble {
+  max-width: min(72%, 470px);
+  padding: 10px 14px;
+  border-radius: 18px;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.msg.me .bubble {
+  color: white;
+  background: linear-gradient(135deg, #e94f8a, #f276aa);
+  border-bottom-right-radius: 5px;
+}
+
+.msg.them .bubble {
+  background: #f3eaf0;
+  border-bottom-left-radius: 5px;
+}
+
+.meta {
+  margin-bottom: 3px;
+  font-size: 10px;
+  opacity: .7;
+}
+
+.time {
+  display: block;
+  margin-top: 4px;
+  font-size: 9px;
+  opacity: .65;
+  text-align: right;
+}
+
+.typing-text {
+  height: 22px;
+  padding: 0 22px;
+  color: #a98a98;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.composer {
+  display: flex;
+  gap: 9px;
+  padding: 13px;
+  background: white;
+  border-top: 1px solid #f0dce5;
+}
+
+.composer input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #ead5df;
+  border-radius: 999px;
+  padding: 12px 16px;
+  outline: none;
+}
+
+.emoji-btn, .send-btn {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.emoji-btn { background: #fff0f6; }
+.send-btn { color: white; background: var(--pink); font-size: 18px; }
+
+@media (max-width: 600px) {
+  .chat-nav { padding: 0 14px; }
+  .brand { font-size: 15px; }
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 11px; }
+  .chat-page { width: 96%; margin-top: 18px; }
+  .chat-card { border-radius: 20px; }
+  .chat-header { min-height: 78px; padding: 14px; }
+  .avatar { width: 44px; height: 44px; font-size: 21px; }
+  .chat-header h1 { font-size: 17px; }
+  .messages { height: 58vh; min-height: 360px; padding: 14px; }
+  .bubble { max-width: 84%; }
+  .login-panel { padding: 28px 18px; }
+  .auth-actions { flex-direction: column; }
+}
+
+
+
+/* =========================================
+   💌 DAILY LOVE NOTE
+========================================= */
+
+.love-note-card {
+    position: relative;
+    width: min(92%, 700px);
+    margin: 25px auto;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.95),
+            rgba(255, 230, 240, 0.92)
+        );
+
+    border: 2px solid transparent;
+
+    box-shadow:
+        0 15px 40px rgba(255, 50, 120, 0.18),
+        inset 0 0 20px rgba(255, 255, 255, 0.7);
+
+    overflow: hidden;
+
+    animation: loveNoteFloat 4s ease-in-out infinite;
+}
+
+
+/* Animated gradient border */
+
+.love-note-card::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+
+    border-radius: 27px;
+
+    background: conic-gradient(
+        from 0deg,
+        #ff1744,
+        #ff4081,
+        #ffd700,
+        #ff69b4,
+        #c77dff,
+        #ff1744
+    );
+
+    animation: loveNoteBorder 4s linear infinite;
+
+    z-index: -1;
+}
+
+
+/* White inner layer */
+
+.love-note-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 3px;
+
+    border-radius: 21px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff0f6
+        );
+
+    z-index: -1;
+}
+
+
+/* 💌 Icon */
+
+.love-note-icon {
+    min-width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 32px;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff,
+            #ffd6e5
+        );
+
+    box-shadow:
+        0 0 15px rgba(255, 20, 100, 0.25),
+        0 0 35px rgba(255, 20, 100, 0.15);
+
+    animation: heartBeatNote 1.8s ease-in-out infinite;
+}
+
+
+/* Content */
+
+.love-note-content {
+    flex: 1;
+}
+
+
+.love-note-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    background: linear-gradient(
+        90deg,
+        #ff1744,
+        #ff4081,
+        #c77dff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.love-note-content p {
+    margin: 0 0 8px;
+
+    font-size: 20px;
+    line-height: 1.5;
+
+    font-weight: 700;
+
+    color: #4a1830;
+
+    text-shadow:
+        0 1px 10px rgba(255, 80, 130, 0.15);
+
+    transition: opacity 0.3s ease,
+                transform 0.3s ease;
+}
+
+
+.love-note-from {
+    font-size: 13px;
+
+    color: #9b5875;
+
+    font-style: italic;
+}
+
+
+/* 💖 New Note button */
+
+.new-note-btn {
+    border: none;
+    outline: none;
+
+    padding: 11px 16px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1744,
+            #ff4081,
+            #c77dff
+        );
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(255, 23, 68, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.new-note-btn:hover {
+    transform: translateY(-3px) scale(1.04);
+
+    box-shadow:
+        0 12px 30px rgba(255, 23, 68, 0.4);
+}
+
+
+.new-note-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* Animations */
+
+@keyframes loveNoteFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+@keyframes loveNoteBorder {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes heartBeatNote {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* =========================================
+   📱 MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .love-note-card {
+        width: calc(100% - 30px);
+
+        padding: 18px;
+
+        gap: 14px;
+
+        flex-wrap: wrap;
+    }
+
+    .love-note-icon {
+        min-width: 55px;
+        width: 55px;
+        height: 55px;
+
+        font-size: 27px;
+    }
+
+    .love-note-content {
+        min-width: 0;
+    }
+
+    .love-note-content p {
+        font-size: 16px;
+    }
+
+    .new-note-btn {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+
+/* =====================================
+   OUR LITTLE LOVE WORLD
+===================================== */
+
+.love-menu-section {
+    width: min(1100px, 94%);
+    margin: 35px auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.section-title span {
+    font-size: 42px;
+    display: block;
+    animation: menuHeartBeat 1.5s infinite;
+}
+
+.section-title h2 {
+    margin: 8px 0 5px;
+    font-size: 28px;
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #ff1744,
+        #ff4081,
+        #c77dff,
+        #ff1744
+    );
+
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: loveGradient 4s linear infinite;
+}
+
+.section-title p {
+    margin: 0;
+    color: #8a5068;
+}
+
+
+/* MENU GRID */
+
+.love-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+}
+
+.love-menu-card {
+    position: relative;
+    min-height: 145px;
+
+    border: 1px solid rgba(255, 105, 150, .25);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.96),
+            rgba(255,230,240,.92)
+        );
+
+    box-shadow:
+        0 10px 30px rgba(255, 50, 120, .10),
+        inset 0 0 20px rgba(255,255,255,.8);
+
+    cursor: pointer;
+
+    padding: 18px 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.love-menu-card:hover {
+    transform: translateY(-7px) scale(1.02);
+
+    box-shadow:
+        0 18px 40px rgba(255, 40, 110, .20),
+        0 0 25px rgba(255, 105, 150, .12);
+}
+
+.love-menu-card:active {
+    transform: scale(.94);
+}
+
+.love-menu-card span {
+    font-size: 38px;
+    margin-bottom: 8px;
+
+    filter:
+        drop-shadow(0 5px 10px rgba(255,50,120,.25));
+}
+
+.love-menu-card strong {
+    color: #8e3155;
+    font-size: 15px;
+}
+
+.love-menu-card small {
+    margin-top: 5px;
+    color: #a66a82;
+    font-size: 11px;
+}
+
+
+/* SECRET CARD */
+
+.secret-menu {
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f7,
+            #f6e9ff,
+            #fff0f7
+        );
+
+    animation: secretGlow 3s ease-in-out infinite;
+}
+
+
+/* =====================================
+   MODAL
+===================================== */
+
+.love-modal {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(40, 10, 25, .65);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 100000;
+}
+
+.love-modal.show {
+    display: flex;
+}
+
+.love-modal-content {
+    position: relative;
+
+    width: min(600px, 100%);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 35px 28px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff1f6
+        );
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.25),
+        0 0 50px rgba(255,70,130,.25);
+
+    animation: modalOpen .35s ease;
+}
+
+.love-modal-close {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #fff0f5;
+
+    color: #d81b60;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.feature-title {
+    text-align: center;
+    color: #d81b60;
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+.feature-subtitle {
+    text-align: center;
+    color: #8a5068;
+}
+
+
+/* =====================================
+   LOVE NOTES
+===================================== */
+
+.love-note-card {
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #fff0f6,
+        #ffffff
+    );
+
+    border: 1px solid #ffc1d6;
+
+    text-align: center;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #8e3155;
+}
+
+.love-action-btn {
+    display: block;
+
+    margin: 20px auto 0;
+
+    padding: 13px 24px;
+
+    border: none;
+    border-radius: 50px;
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1744,
+            #ff4081,
+            #c77dff
+        );
+
+    box-shadow: 0 8px 25px rgba(255,23,68,.25);
+}
+
+
+/* =====================================
+   WHY I LOVE YOU
+===================================== */
+
+.reason-box {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    font-size: 21px;
+    line-height: 1.7;
+
+    color: #9c315d;
+
+    min-height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =====================================
+   QUIZ
+===================================== */
+
+.quiz-question {
+    text-align: center;
+
+    color: #8e3155;
+
+    font-size: 21px;
+
+    margin-bottom: 20px;
+}
+
+.quiz-option {
+    display: block;
+
+    width: 100%;
+
+    margin: 10px 0;
+
+    padding: 14px;
+
+    border-radius: 15px;
+
+    border: 1px solid #ffc1d6;
+
+    background: #fff7fa;
+
+    color: #8e3155;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: .25s;
+}
+
+.quiz-option:hover {
+    background: #ffe3ed;
+    transform: translateX(5px);
+}
+
+.quiz-result {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #d81b60;
+
+    font-weight: 700;
+}
+
+
+/* =====================================
+   OPEN WHEN
+===================================== */
+
+.open-when-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 12px;
+}
+
+.open-when-card {
+    padding: 20px;
+
+    border: 1px solid #ffc6d9;
+
+    border-radius: 18px;
+
+    background: #fff7fa;
+
+    cursor: pointer;
+
+    color: #8e3155;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    transition: .25s;
+}
+
+.open-when-card:hover {
+    transform: translateY(-4px);
+    background: #ffeaf2;
+}
+
+
+/* =====================================
+   MEMORIES
+===================================== */
+
+.memory-upload {
+    display: block;
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: 2px dashed #ff9fbe;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    color: #c2185b;
+
+    cursor: pointer;
+}
+
+.memory-upload input {
+    display: none;
+}
+
+.memory-preview {
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.memory-item {
+    position: relative;
+}
+
+.memory-item img {
+    width: 100%;
+    height: 160px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    box-shadow: 0 7px 20px rgba(0,0,0,.12);
+}
+
+
+/* =====================================
+   DREAMS
+===================================== */
+
+.dream-input {
+    display: flex;
+    gap: 8px;
+}
+
+.dream-input input {
+    flex: 1;
+
+    padding: 13px;
+
+    border: 1px solid #ffb5cb;
+
+    border-radius: 14px;
+
+    outline: none;
+}
+
+.dream-list {
+    margin-top: 20px;
+}
+
+.dream-item {
+    padding: 13px 15px;
+
+    margin: 8px 0;
+
+    border-radius: 14px;
+
+    background: #fff0f6;
+
+    color: #8e3155;
+}
+
+
+/* =====================================
+   FUTURE COUNTDOWN
+===================================== */
+
+.future-countdown {
+    text-align: center;
+}
+
+.countdown-number {
+    font-size: 42px;
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff1744,
+            #ff4081,
+            #c77dff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.countdown-label {
+    color: #8e5068;
+}
+
+
+/* =====================================
+   SECRET LETTER
+===================================== */
+
+.secret-letter {
+    padding: 28px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f8efff
+        );
+
+    color: #7e3455;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    text-align: center;
+}
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes menuHeartBeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes loveGradient {
+    to {
+        background-position: 300% center;
+    }
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        transform: scale(.8) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes secretGlow {
+    0%,100% {
+        box-shadow: 0 0 10px rgba(199,125,255,.15);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(199,125,255,.4);
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:800px) {
+
+    .love-menu-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:500px) {
+
+    .love-menu-grid {
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+
+    .love-menu-card {
+        min-height: 125px;
+        padding: 12px 7px;
+    }
+
+    .love-menu-card span {
+        font-size: 30px;
+    }
+
+    .love-menu-card strong {
+        font-size: 13px;
+    }
+
+    .love-menu-card small {
+        font-size: 10px;
+    }
+
+    .love-modal-content {
+        padding: 30px 18px;
+    }
+
+    .open-when-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   FIX: HORIZONTAL SCROLL / DISPLAY JUMP
+===================================================== */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Love World section */
+.love-notes-section {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Love cards grid */
+.love-menu-grid {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+    padding: 0;
+}
+
+/* Individual cards */
+.love-menu-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+    .love-menu-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .love-menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .love-menu-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .love-menu-card {
+        width: 100%;
+    }
+}
+
+/* Navbar also cannot create horizontal overflow */
+.chat-nav {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-links {
+    max-width: 100%;
+}
+
+
+/* =========================================
+   📸 GALLERY IMAGE AUTO-ADJUST & POPUP STYLING
+========================================= */
+
+/* तस्वीरों को बॉक्स में परफेक्ट एडजस्ट करने के लिए */
+.memory-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+  gap: 12px !important;
+  padding: 15px 5px !important;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.memory-preview .img-card {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important; /* इमेज बॉक्स को परफेक्ट स्क्वायर बनाएगा */
+  overflow: hidden;
+  border-radius: 16px !important;
+  border: 4px solid white !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 0 !important; /* पुराने मार्जिन को हटाकर रीसेट करेगा */
+}
+
+.memory-preview .img-card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* इमेज बिना खींचे बॉक्स में खुद को एडजस्ट करेगी */
+  display: block !important;
+}
+
+.memory-preview .img-card:hover {
+  transform: scale(1.03);
+}
+
+/* 🖼️ बड़ी फोटो खोलने वाला नया फुल-स्क्रीन पॉप-अप स्टाइल */
+.image-lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 25, 33, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100005; /* सबसे ऊपर दिखने के लिए */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.image-lightbox-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-img-wrapper {
+  max-width: 85%;
+  max-height: 80vh;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.image-lightbox-modal.show .lightbox-img-wrapper {
+  transform: scale(1);
+}
+
+.lightbox-img-wrapper img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 20px;
+  border: 5px solid white;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  display: block;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: #e94f8a;
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   🖼️ DISPLAY FIX FOR LIGHTBOX POPUP
+========================================= */
+
+/* जब जावास्क्रिप्ट .show क्लास जोड़ेगा, तब यह पॉप-अप स्क्रीन पर दिखेगा */
+.image-lightbox-modal.show {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  display: flex !important; /* इसे स्क्रीन के बिल्कुल बीच में लाएगा */
+}
+
+
+
