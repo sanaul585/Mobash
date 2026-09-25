@@ -2502,7 +2502,7 @@ body.dark-theme .theme-icon-sun {
     flex-wrap: nowrap !important;
     justify-content: flex-end !important;
     align-items: center !important;
-    gap: clamp(10px, 2.5vw, 28px) !important;
+    gap: clamp(20px, 2vw, 15px) !important;
     margin: 0 !important;
     padding: 0 !important;
     list-style: none !important;
@@ -2518,7 +2518,7 @@ body.dark-theme .theme-icon-sun {
 .menu-list li a {
     display: block !important;
     white-space: nowrap !important;
-    font-size: clamp(10px, 2vw, 13px) !important;
+    font-size: clamp(8px, 2vw, 13px) !important;
     letter-spacing: clamp(.5px, .2vw, 1px) !important;
     line-height: 1 !important;
     padding: 8px 0 !important;
@@ -2535,7 +2535,7 @@ body.dark-theme .theme-icon-sun {
         border-radius: 50% !important;
     }
     .colorlib-footer ul li a.foru svg { width: 13px !important; height: 13px !important; }
-    .menu-list { gap: 12px !important; }
+    .menu-list { gap: 10px !important; }
     .menu-list li a { font-size: 9px !important; letter-spacing: .4px !important; padding: 8px 0 !important; }
 
     /* Never push content hundreds of pixels below the fixed navbar. */
@@ -3157,7 +3157,7 @@ color:red;
 
 
 /* ==============================================================================
-   👑 MOBILE NAVBAR LINE-BREAK & HORIZONTAL SCROLL FIX ENGIN
+   👑 MOBILE NAVBAR LINE-BREAK & HORIZONTAL SCROLL FIX ENGINE
    ============================================================================== */
 
 /* 1. Pure page ka left-right ka faltu jhanjhat khatam karna */
@@ -3194,7 +3194,7 @@ html, body {
         flex-direction: row !important; /* Ek line me menu rahenge */
         flex-wrap: wrap !important;     /* Agar jagah kam pade toh khud line break lenge */
         justify-content: center !important;
-        gap: 8px !important;            /* Har menu ke beech ka horizontal gap */
+        gap: 12px !important;            /* Har menu ke beech ka horizontal gap */
         margin: 0 auto !important;
         padding: 0 !important;
         width: 100% !important;
@@ -3202,8 +3202,81 @@ html, body {
 
     /* Mobile ke hisab se menu text ko clean and standard rakhna */
     .menu-list li a {
-        font-size: 12px !important;
-        font-weight: 600 !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
         padding: 4px 6px !important;
     }
+}
+
+
+/* =========================================
+   📱 MOBILE TOUCH OPTIMIZATION FOR GALLERY
+========================================= */
+
+.memory-preview .img-card img {
+  pointer-events: auto !important; /* मोबाइल टच को डायरेक्ट इमेज तक पहुँचने देगा */
+}
+
+/* मोबाइल स्क्रीन पर डिलीट बटन का लेआउट परफेक्ट रखने के लिए */
+@media (max-width: 768px) {
+  .delete-mem-btn {
+    opacity: 0.9 !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 16px !important;
+    top: 5px !important;
+    right: 5px !important;
+  }
+  
+  .lightbox-img-wrapper img {
+    max-width: 95% !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* ==============================================================================
+   👑 NAVBAR MENU SPACING ADJUSTMENT ENGINE (GAP REDUCED)
+   ============================================================================== */
+
+/* Laptop aur badi screen par menu links ke beech ke gap ko kam karna */
+.menu-list {
+    display: flex !important;
+    list-style: none !important;
+    gap: 8px !important; /* ─── FIXED: Gap ko 30px se ghatakar bilkul perfect 15px kar diya ─── */
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Menu ke links ki internal padding ko bhi thoda sleek karna */
+.menu-list li a {
+    padding: 4px 8px !important; /* Spacing ko soft aur clean rakha */
+    font-size: 12px !important;  /* Font size perfectly visible rahega */
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+
+
+/* ==============================================================================
+   👑 SOCIAL MEDIA ICONS SPACING ENGINE (GAP REDUCED)
+   ============================================================================== */
+
+/* Laptop aur badi screen par left side ke social icons ke bich ke gap ko kam karna */
+.colorlib-footer ul {
+    display: flex !important;
+    list-style: none !important;
+    gap: 10px !important; /* ─── FIXED: Gap ko 18px se ghatakar bilkul perfect 10px kar diya ─── */
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Icons ke click/touch target space ko clean aur compact rakhna */
+.colorlib-footer ul li a {
+    padding: 2px 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
