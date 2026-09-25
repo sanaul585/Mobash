@@ -438,3 +438,171 @@ function toggleCornerMusic() {
 window.yesClicked = yesClicked;
 window.talkClicked = talkClicked;
 
+/* =========================================
+   📱💻 HYBRID LIGHTBOX FOR MOBILE & LAPTOP
+========================================= */
+
+// 1. अल्टीमेट लाइटबॉक्स कंटेनर बनाना (यदि पहले से नहीं बना है)
+function createUltimateLightbox() {
+    if (document.getElementById("magicLightboxContainer")) return;
+
+    const lightboxDiv = document.createElement("div");
+    lightboxDiv.id = "magicLightboxContainer";
+    lightboxDiv.style.cssText = `
+        position: fixed;
+        inset: 0;
+        background: rgba(20, 10, 15, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999999999 !important;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+    `;
+
+    lightboxDiv.innerHTML = `
+        <div style="position: relative; max-width: 90%; max-height: 80vh;" onclick="event.stopPropagation()">
+            <button onclick="closeUltimateLightbox()" style="position: absolute; top: -20px; right: -20px; background: #e94f8a; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 24px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 100;">×</button>
+            <img id="magicLightboxImg" src="" style="max-width: 100%; max-height: 80vh; border-radius: 16px; border: 4px solid white; box-shadow: 0 25px 60px rgba(0,0,0,0.5); display: block; object-fit: contain;">
+        </div>
+    `;
+
+    document.body.appendChild(lightboxDiv);
+    lightboxDiv.addEventListener("click", closeUltimateLightbox);
+}
+
+function closeUltimateLightbox() {
+    const container = document.getElementById("magicLightboxContainer");
+    if (container) {
+        container.style.opacity = "0";
+        setTimeout(() => { container.style.display = "none"; }, 250);
+    }
+}
+
+// 2. मोबाइल (Touch) और लैपटॉप (Click) दोनों के लिए कंबाइंड हैंडलर
+function handleImageZoom(event) {
+    // अगर डिलीट बटन पर क्लिक हुआ है, तो ज़ूम न करें
+    if (event.target.classList.contains("delete-mem-btn") || event.target.textContent.includes("🗑️")) {
+        return;
+    }
+
+    const previewContainer = document.getElementById("memoryPreview");
+    if (!previewContainer) return;
+
+    // यह चेक करेगा कि क्या टच/क्लिक गैलरी के अंदर किसी इमेज या कार्ड पर हुआ है
+    const targetCard = event.target.closest(".img-card");
+    if (targetCard && previewContainer.contains(targetCard)) {
+        
+        let imgTag = targetCard.querySelector("img");
+        if (imgTag && imgTag.src) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            createUltimateLightbox();
+
+            const container = document.getElementById("magicLightboxContainer");
+            const bigImg = document.getElementById("magicLightboxImg");
+
+            if (container && bigImg) {
+                bigImg.src = imgTag.src;
+                container.style.display = "flex";
+                setTimeout(() => { container.style.opacity = "1"; }, 30);
+            }
+        }
+    }
+}
+
+// लैपटॉप के लिए क्लिक और मोबाइल के लिए टच स्टार्ट दोनों को सुनना
+document.addEventListener("click", handleImageZoom, true);
+document.addEventListener("touchstart", function(e) {
+    // मोबाइल के रिस्पॉन्स को फ़ास्ट करने के लिए टच इवेंट सपोर्ट
+    if (e.target.closest(".img-card img")) {
+        handleImageZoom(e);
+    }
+}, { passive: true });
+/* =========================================
+   📱💻 HYBRID LIGHTBOX FOR MOBILE & LAPTOP
+========================================= */
+
+// 1. अल्टीमेट लाइटबॉक्स कंटेनर बनाना (यदि पहले से नहीं बना है)
+function createUltimateLightbox() {
+    if (document.getElementById("magicLightboxContainer")) return;
+
+    const lightboxDiv = document.createElement("div");
+    lightboxDiv.id = "magicLightboxContainer";
+    lightboxDiv.style.cssText = `
+        position: fixed;
+        inset: 0;
+        background: rgba(20, 10, 15, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999999999 !important;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+    `;
+
+    lightboxDiv.innerHTML = `
+        <div style="position: relative; max-width: 90%; max-height: 80vh;" onclick="event.stopPropagation()">
+            <button onclick="closeUltimateLightbox()" style="position: absolute; top: -20px; right: -20px; background: #e94f8a; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 24px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 100;">×</button>
+            <img id="magicLightboxImg" src="" style="max-width: 100%; max-height: 80vh; border-radius: 16px; border: 4px solid white; box-shadow: 0 25px 60px rgba(0,0,0,0.5); display: block; object-fit: contain;">
+        </div>
+    `;
+
+    document.body.appendChild(lightboxDiv);
+    lightboxDiv.addEventListener("click", closeUltimateLightbox);
+}
+
+function closeUltimateLightbox() {
+    const container = document.getElementById("magicLightboxContainer");
+    if (container) {
+        container.style.opacity = "0";
+        setTimeout(() => { container.style.display = "none"; }, 250);
+    }
+}
+
+// 2. मोबाइल (Touch) और लैपटॉप (Click) दोनों के लिए कंबाइंड हैंडलर
+function handleImageZoom(event) {
+    // अगर डिलीट बटन पर क्लिक हुआ है, तो ज़ूम न करें
+    if (event.target.classList.contains("delete-mem-btn") || event.target.textContent.includes("🗑️")) {
+        return;
+    }
+
+    const previewContainer = document.getElementById("memoryPreview");
+    if (!previewContainer) return;
+
+    // यह चेक करेगा कि क्या टच/क्लिक गैलरी के अंदर किसी इमेज या कार्ड पर हुआ है
+    const targetCard = event.target.closest(".img-card");
+    if (targetCard && previewContainer.contains(targetCard)) {
+        
+        let imgTag = targetCard.querySelector("img");
+        if (imgTag && imgTag.src) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            createUltimateLightbox();
+
+            const container = document.getElementById("magicLightboxContainer");
+            const bigImg = document.getElementById("magicLightboxImg");
+
+            if (container && bigImg) {
+                bigImg.src = imgTag.src;
+                container.style.display = "flex";
+                setTimeout(() => { container.style.opacity = "1"; }, 30);
+            }
+        }
+    }
+}
+
+// लैपटॉप के लिए क्लिक और मोबाइल के लिए टच स्टार्ट दोनों को सुनना
+document.addEventListener("click", handleImageZoom, true);
+document.addEventListener("touchstart", function(e) {
+    // मोबाइल के रिस्पॉन्स को फ़ास्ट करने के लिए टच इवेंट सपोर्ट
+    if (e.target.closest(".img-card img")) {
+        handleImageZoom(e);
+    }
+}, { passive: true });
