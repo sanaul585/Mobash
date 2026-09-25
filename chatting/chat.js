@@ -183,19 +183,16 @@ initFirebase();
    💌 DAILY LOVE NOTE
 ========================================= */
 const loveNotes = [
-    "Tum meri favourite notification ho ❤️",
-    "Duniya mein bahut log hain, lekin mera dil sirf tumhe choose karta hai 💕",
-    "Tumse baat karna mere din ka favourite part hai 🥰",
-    "Agar mujhe dobara choose karna pade, main phir tumhe hi choose karunga ❤️",
-    "Tum meri life ka woh chapter ho jise main kabhi end nahi karna chahta 📖❤️",
-    "Tumhari smile meri favourite view hai 😍",
-    "Distance chahe jitna ho, mera dil hamesha tumhare paas hai 💗",
-    "Mujhe perfect life nahi chahiye, bas tumhare saath wali life chahiye 💍",
-    "Tum ho, isliye meri ordinary days bhi special lagti hain ✨",
-    "One day, these messages will become our beautiful memories ❤️",
-    "Tum meri favourite person, favourite feeling aur favourite future ho 🫶",
-    "Bas ek promise — hum hamesha ek dusre ko choose karenge ❤️"
+    "Zindagi ka har naya din ek nayi umeed aur behtareen seekh lekar aata hai. ✨",
+    "Ek saccha rishta wahi hai jahan dono ek doosre ki izzat aur khayalat ki qadar karein. 🙏",
+    "Umeed hai humari aane wali baatein hum dono ke liye bohot sahi aur sahaj rahengi. 😊",
+    "Zindagi me sabse badi khushi aapsi samajh aur sukoon se aati hai. 🤲",
+    "Har naye safar ki neev agar dosti aur aitemad se rakhi jaye, toh wo bohot mazboot hoti hai. 🤝",
+    "Main chahta hoon ki hum bina kisi jhijhak ke ek doosre ke vicharon ko samajh sakein.",
+    "Aapki muskaan bohot pyaari aur saaf hai, Khuda ise hamesha yuhi salamat rakhe. 🌸",
+    "Ek acchi aur lambi dosti ke liye poori honesty aur respect ka hona behad zaroori hai. ❤️"
 ];
+
 
 function showNewLoveNote() {
     const noteElement = document.getElementById("dailyLoveNote");
@@ -677,23 +674,21 @@ function closeLoveFeature() {
 ========================================= */
 
 const loveNotesData = [
-
-    "Tum meri favourite notification ho ❤️",
-
-    "Tumhari smile meri favourite view hai 😘",
-
-    "Tumhari ek message meri poori day better kar sakti hai 💕",
-
-    "Tum mere life ka sabse beautiful chapter ho 📖❤️",
-
-    "I don't need a perfect life, I just need you in mine 💖",
-
-    "Tumhari yaad meri favourite feeling hai 🥺❤️",
-
-    "Forever sounds beautiful when it is with you 💍",
-
-    "Tum ho toh ordinary moments bhi special lagte hain ✨"
-
+    "Ek naye safar ki shuruaat hamesha ek sacchi dosti se honi chahiye. ✨",
+	
+    "Main chahta hoon ki hum pehle ek doosre ke khayalat aur pasand ko samjhein. 🙏",
+	
+    "Aapki har baat, aapki pasand aur aapki izzat mere liye sabse pehle priority hogi.",
+	
+    "Zindagi me rishtey umeed aur bharose par tikte hain, aur main wahi bharosa banana chahta hoon. 🤲",
+	
+    "Umeed hai jab humari baat-cheet shuru hogi, toh ye safar behad khoobsurat rahega.",
+	
+    "Main nahi chahta koi jaldbaazi ho, hum aaram se ek doosre ko jaantey aur samajhtey hain. 😊",
+	
+    "Aapki saadgi hi aapki sabse badi khoobsurati hai, Khuda is muskaan ko salamat rakhe.",
+	
+    "Ek acche humsafar se pehle, main aapka ek sabse accha aur saccha dost banna chahta hoon. ❤️"
 ];
 
 function newLoveNote() {
@@ -716,23 +711,23 @@ function newLoveNote() {
 
 const loveReasons = [
 
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ ❤️",
-
-    "Tumhara caring nature 🥺",
-
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ 💕",
-
-    "SANAUL ISLAM 🤗",
-
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ 😘",
-
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ ❤️",
-
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ 💍",
-
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ ❤️"
-
+    "Aapki saadgi aur khayalat jo is rishte ko sabse alag banate hain. ✨",
+	
+    "Humare beech ka aapsi aitemad aur ek doosre ke liye respect. 🙏",
+	
+    "Zindagi ke is naye safar ko dosti ke sath aage badhane ki umeed.",
+	
+    "Aapki har khushi aur sukoon ka hamesha khayal rakhne ka jazba. 🤲",
+	
+    "Ek doosre ke parivaar aur khayalat ki hamesha izzat karna.",
+	
+    "Har mushkil mod par ek mazboot bharosa ban kar sath khade rehna. 🤝",
+	
+    "Rishte ki shuruaat ek sacchi dosti aur poori honesty ke sath karna. 😊",
+	
+    "Khuda se is pakiza rishte me barkat aur hamesha khushiyan mangna."
 ];
+
 
 function newLoveReason() {
 
@@ -886,20 +881,19 @@ function answerQuiz(index) {
 ========================================= */
 
 const openWhenMessages = [
-
-    "time aayega fir yaha kuch likha jayega ❤️",
-
-    "time aayega fir yaha kuch likha jayega 🤗❤️",
-
-    "time aayega fir yaha kuch likha jayega 😘",
-
-    "time aayega fir yaha kuch likha jayega 🌙❤️",
-
-    "time aayega fir yaha kuch likha jayega 💍❤️",
-
-    "time aayega fir yaha kuch likha jayega 🤗💕"
-
+    "Jab aap thoda pareshan hon: 'Bilkut aaram se rahiye, main hamesha aapki baat sunne aur samajhne ke liye ek saccha dost ban kar sath hoon.' 😊",
+	
+    "Jab aap thoda udas hon: 'Khuda aapki muskaan ko salamat rakhe. Aapki khushi mere liye zindagi me sabse zyada qeemti hogi.' 🤲✨",
+	
+    "Jab aapko koi baat share karni ho: 'Bina kisi jhijhak ke aap apni har baat share kar sakti hain, main hamesha ek accha listener banunga.' 🙏",
+	
+    "Jab aapko hausla chahiye ho: 'Aap bohot samajhdar hain. Mujhe poora yakeen hai ki hum dono milkar har fikr ko aasan bana denge.' 🤝",
+	
+    "Jab aapko aitemad (Trust) chahiye hon: 'Main waada karta hoon ki is rishte me izzat, honesty aur aitbaar hamesha sabse upar rahega.' 💍",
+	
+    "Jab aap muskura rahi hon: 'Aapki ye pyari si saadgi aur muskaan is naye safar ki sabse khoobsurat shuruaat hai. Hamesha haste rahiye.' ✨❤️"
 ];
+
 
 function openWhenMessage(index) {
 
@@ -925,24 +919,16 @@ function openWhenMessage(index) {
 ========================================= */
 
 const dailyQuestions = [
-
-    "1.wahit kijiye abhi...................? ❤️",
-
-    "2.wahit kijiye abhi...................? ✈️",
-
-    "3.wahit kijiye abhi...................? 💕",
-
-    "4.wahit kijiye abhi...................? 😘",
-
-    "5.wahit kijiye abhi...................? 🎬",
-
-    "6.wahit kijiye abhi...................? 🏠❤️",
-
-    "7.wahit kijiye abhi...................?? 🥺",
-
-    "8.wahit kijiye abhi...................?? 💍"
-
+    "Aapko life me sabse zyada sukoon kis cheez me milta hai? ✨",
+    "Agar aapko kahin ghoomne jana ho, toh aapki dream destination kaun si hai? 🏔️",
+    "Aapka favorite food kaun sa hai, aur kya aapko cooking karna pasand hai? 🍲",
+    "Aapko hamesha haste rehna pasand hai ya aap thoda shaant rehna pasand karti hain? 😊",
+    "Koi aisi hobby ya cheez jo aapko khali waqt me karna behad accha lagta hai? 🎨",
+    "Aapki life ka sabse khoobsurat ya yaadgaar lamha kaun sa raha hai? 🌸",
+    "Aapko barish ka mausam zyada pasand hai ya thand ka mausam? 🌧️❄️",
+    "Aapko gusse me hamesha chup rehna pasand hai ya aap bol kar gussa saaf karti hain? 🤫"
 ];
+
 
 function newDailyQuestion() {
 
