@@ -3202,8 +3202,8 @@ html, body {
 
     /* Mobile ke hisab se menu text ko clean and standard rakhna */
     .menu-list li a {
-        font-size: 13px !important;
-        font-weight: 700 !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
         padding: 4px 6px !important;
     }
 }
