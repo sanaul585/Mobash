@@ -2518,8 +2518,8 @@ body.dark-theme .theme-icon-sun {
 .menu-list li a {
     display: block !important;
     white-space: nowrap !important;
-    font-size: clamp(10px, 2.7vw, 14px) !important;
-    letter-spacing: clamp(.5px, .3vw, 2px) !important;
+    font-size: clamp(10px, 2vw, 13px) !important;
+    letter-spacing: clamp(.5px, .2vw, 1px) !important;
     line-height: 1 !important;
     padding: 8px 0 !important;
 }
@@ -3152,5 +3152,58 @@ color:red;
 @keyframes snakeSpin {
     to {
         transform: rotate(360deg);
+    }
+}
+
+
+/* ==============================================================================
+   👑 MOBILE NAVBAR LINE-BREAK & HORIZONTAL SCROLL FIX ENGINE
+   ============================================================================== */
+
+/* 1. Pure page ka left-right ka faltu jhanjhat khatam karna */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important; /* Isse page left-right jump nahi karega */
+}
+
+/* 2. JAB WEBSITE MOBILE PHONE PAR KHULEGI (Mobile Break Rules) */
+@media screen and (max-width: 768px) {
+    
+    /* Pure navigation container ko block banana taaki line break ho sake */
+    .nav-container {
+        display: flex !important;
+        flex-direction: column !important; /* ─── CRITICAL: Socials ko upar aur menu ko niche tod diya ─── */
+        align-items: center !important;
+        gap: 12px !important; /* Dono line ke beech ka safe gap */
+        padding: 10px 5px !important;
+    }
+
+    /* Top Left wale social icons ko upar ki line me center karna */
+    .colorlib-footer, .colorlib-footer ul {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+    }
+
+    /* Niche ki text menu line (HOME, ABOUT आदि) ko auto wrapping dena */
+    .menu-list {
+        display: flex !important;
+        flex-direction: row !important; /* Ek line me menu rahenge */
+        flex-wrap: wrap !important;     /* Agar jagah kam pade toh khud line break lenge */
+        justify-content: center !important;
+        gap: 12px !important;            /* Har menu ke beech ka horizontal gap */
+        margin: 0 auto !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Mobile ke hisab se menu text ko clean and standard rakhna */
+    .menu-list li a {
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        padding: 4px 6px !important;
     }
 }
