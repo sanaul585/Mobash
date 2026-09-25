@@ -3194,7 +3194,7 @@ html, body {
         flex-direction: row !important; /* Ek line me menu rahenge */
         flex-wrap: wrap !important;     /* Agar jagah kam pade toh khud line break lenge */
         justify-content: center !important;
-        gap: 12px !important;            /* Har menu ke beech ka horizontal gap */
+        gap: 8px !important;            /* Har menu ke beech ka horizontal gap */
         margin: 0 auto !important;
         padding: 0 !important;
         width: 100% !important;
