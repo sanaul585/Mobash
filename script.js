@@ -379,6 +379,7 @@ function lockIndividualMenuLayouts() {
     }
 }
 
+
 // Global active loop sensors for seamless execution
 window.addEventListener('load', lockIndividualMenuLayouts);
 window.addEventListener('resize', lockIndividualMenuLayouts);
@@ -436,7 +437,4 @@ function toggleCornerMusic() {
 
 window.yesClicked = yesClicked;
 window.talkClicked = talkClicked;
-
-
-
 
