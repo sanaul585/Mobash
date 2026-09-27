@@ -8,7 +8,7 @@ const ALLOWED_EMAILS = [
 ];
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBMC6zSRFjmxMUYToC04nGyy2wR1iHgDgc",
+    apiKey: "AIzaSyBMC6zSRPjmxMUyTQC04nGyy2wRiiHgDgc",
     authDomain: "proposalchat-2f314.firebaseapp.com",
     databaseURL: "https://proposalchat-2f314-default-rtdb.firebaseio.com/",
     projectId: "proposalchat-2f314",
