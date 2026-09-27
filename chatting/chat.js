@@ -9,8 +9,8 @@ const ALLOWED_EMAILS = [
 
 const firebaseConfig = {
     apiKey: "AIzaSyBMC6zSRFjmxMUYToC04nGyy2wR1iHgDgc",
-    authDomain: "://firebaseapp.com",
-    databaseURL: "https://firebaseio.com",
+    authDomain: "proposalchat-2f314.firebaseapp.com",
+    databaseURL: "https://proposalchat-2f314-default-rtdb.firebaseio.com/",
     projectId: "proposalchat-2f314",
     storageBucket: "proposalchat-2f314.firebasestorage.app",
     messagingSenderId: "806178842142",
@@ -21,9 +21,8 @@ const firebaseConfig = {
 let firebaseMode = true;
 
 // 2. ऐप्स और डेटाबेस को सही तरीके से ग्लोबली कनेक्ट करना
-const app = firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.database();
+let auth = null;
+let db = null;
 
 // 3. डोम एलिमेंट्स को आसानी से ढूंढने का शॉर्टकट
 const $ = id => document.getElementById(id);
