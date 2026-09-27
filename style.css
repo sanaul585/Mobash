@@ -3280,3 +3280,70 @@ html, body {
     align-items: center !important;
     justify-content: center !important;
 }
+
+
+
+/* ==============================================================================
+   👑 PERFECT MASTER TWO-LINE MOBILE NAVBAR ENGINE (NO HIDE / SINGLE LINE MENU)
+   ============================================================================== */
+
+@media screen and (max-width: 768px) {
+    /* Main navbar ke baxe ko do lines ke hisab se safe space dena */
+    .navbar {
+        padding: 10px 5px !important;
+    }
+
+    /* 1. Main container ko upar-niche do alag alag lines me todna */
+    .nav-container {
+        display: flex !important;
+        flex-direction: column !important; /* ─── CRITICAL: Icons ko upar aur menu ko niche alag line me kiya ─── */
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;              /* Dono lines ke beech ka safe space */
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 2. FIRST LINE: Upar wali line me saare social icons center me rahenge */
+    .colorlib-footer {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .colorlib-footer ul {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 16px !important; /* Icons ke beech ka gap pyara aur khula rakha */
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .colorlib-footer ul li a {
+        font-size: 18px !important; /* Social icons ko aaram se bada dikhane ka size */
+    }
+
+    /* 3. SECOND LINE: Niche wali line me saare menu options bina tute ek sath rahenge */
+    .menu-list {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important; /* ─── CRITICAL: Menu links aapas me kabhi niche nahi tootenge ─── */
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 10px !important;          /* Har menu button ke beech ka perfect space */
+        margin: 0 auto !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* 4. Menu Text (HOME, ABOUT आदि) ko bina tute fit rakhne ka master size */
+    .menu-list li a {
+        font-size: 12px !important;   /* Ek line me saare 6 buttons aaram se bade dikhenge */
+        font-weight: 700 !important;
+        padding: 4px 6px !important;  /* Touch karne ke liye perfect space padding */
+        letter-spacing: 0px !important;
+        white-space: nowrap !important; /* Kisi bhi text word ko tootne se rokega */
+    }
+}
