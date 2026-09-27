@@ -4,7 +4,7 @@
 
 const ALLOWED_EMAILS = [
     "sanaulislam77@gmail.com",
-    "islamsanaul77@gmail.com"
+    "mobashshera321@gmail.com"
 ];
 
 const firebaseConfig = {
