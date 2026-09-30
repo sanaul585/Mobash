@@ -1,28 +1,45 @@
-COUPLE PRIVATE CHAT - FINAL
+# Sanaul ❤️ Mobashshera — Premium Romantic Website
 
-Approved Gmail accounts:
-1. sanaulislam77@gmail.com
-2. islamsanaul77@gmail.com
+## Included
+- Premium glassmorphism + aurora background
+- 2D canvas floating hearts/stars
+- CSS 3D romantic "Open My Heart" experience
+- Interactive 3D tilt cards
+- Animated love letter with typing effect
+- Future-life timeline
+- 3D promise orb
+- Surprise interaction + final heart animation
+- Responsive mobile navigation
+- Dark/light mode
+- Music on/off button using the included `music.mp3`
+- Your uploaded Sanaul photo
 
-Firebase project:
-proposalchat-2f314
-Realtime Database:
-https://proposalchat-2f314-default-rtdb.firebaseio.com/
+## Run
+Keep all files in the same folder and open `index.html` in Chrome/Edge.
 
-SETUP
-1. Firebase Console > Authentication > Sign-in method > Email/Password: ENABLED.
-2. Firebase Console > Realtime Database: create the database if not already created.
-3. Realtime Database > Rules: paste the contents of firebase-rules.json and Publish.
-4. Serve this folder through a web server (VS Code Live Server, localhost, or your hosting). Do not rely on file:// for the real Firebase chat.
-5. Open chat.html.
-6. For each of the two Gmail addresses, use Create account once with the password you choose. You can use the same password for both accounts, but the password is never stored in this project.
-7. Then use Login. Messages are stored in Firebase Realtime Database and appear in real time on both devices.
+## Bride photo
+The supplied files included `boy.jpg` but no `girl.jpg`, so the Mobashshera side currently uses a premium animated "M" placeholder.
+If you later add her photo, replace the `.bride-placeholder` block in `index.html` with:
+`<img src="girl.jpg" alt="Mobashshera" class="profile-photo">`
 
-SECURITY
-The frontend only permits the two approved email addresses, and firebase-rules.json also checks the authenticated email on the database server. Do not weaken those rules.
+## Music
+The included `music.mp3` is connected. Browsers block unexpected autoplay, so the music starts when the bottom-left music button is clicked.
 
-IMPORTANT
-The Firebase web API key is not a password/secret; it is normal for it to be present in frontend code. Never put your Firebase Admin SDK private key, service-account JSON, or account password in this folder.
+## Wedding date
+No exact wedding date was supplied in the request, so no fake countdown date has been hard-coded.
 
-FILE:// DEMO
-If chat.html is opened directly from the filesystem, the page falls back to a local Demo Mode. That mode is only local to that browser and is NOT the real two-device chat.
+
+## V3 additions
+- Larger couple portraits
+- Bolder Playfair Display headings
+- Cinematic dream-life page replacing the old timeline layout
+- Animated moving gradient/snake borders with different palettes
+- Dedicated proposal question: "Will you marry me, Mobashshera?"
+- "Yes, show me" now opens a special full-screen proposal experience
+- Open My Heart -> Back to our story now scrolls correctly to Our Story
+
+
+V5 additions:
+- Love World section with five romantic concepts
+- Real Love section focused on respect, communication, trust, patience, effort and choosing each other
+- New navigation links for Love World and Real Love
