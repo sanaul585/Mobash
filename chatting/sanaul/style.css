@@ -1580,3 +1580,54 @@ box-shadow: 0 4px 12px rgba(255, 20, 147, 1) !important;}
     box-shadow:
         0 6px 18px rgba(255, 20, 147, 0.20) !important;
 }
+
+/* =========================================
+   ⚡ SMOOTH SCROLL PERFORMANCE FIX
+   ========================================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Floating background animations ko GPU par rakho */
+.hearts,
+.stars,
+.floating-heart,
+.star {
+    will-change: transform, opacity;
+    pointer-events: none;
+}
+
+/* Heavy 3D sections */
+.pure-love-section,
+.love-3d {
+    will-change: transform;
+}
+
+/* Cards ko unnecessary repaint se bachao */
+.card,
+.story-card,
+.letter-card,
+.family-card,
+.promise-card,
+.final-card,
+.shy-card {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Mobile par animation load thoda kam */
+@media (max-width: 600px) {
+    .love-particles {
+        animation-duration: 9s;
+    }
+
+    .love-3d {
+        animation-duration: 6s;
+    }
+}
