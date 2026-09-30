@@ -1631,3 +1631,54 @@ body {
         animation-duration: 6s;
     }
 }
+
+/* =========================================
+   💍 WILL YOU MARRY ME - MOBILE FIX
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .pure-love-section {
+        width: 100%;
+        max-width: 100%;
+        min-height: 100svh;
+        padding: 90px 15px 40px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .love-3d {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        transform: none;
+    }
+
+    .lover-name {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(42px, 14vw, 75px);
+        line-height: 1.05;
+        letter-spacing: 1px;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .love-text {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(28px, 9vw, 50px);
+        line-height: 1.15;
+        letter-spacing: 1px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .love-particles {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        font-size: 18px;
+    }
+}
