@@ -1906,3 +1906,27 @@ main {
         font-size: .9rem;
     }
 }
+
+@media (max-width: 760px) {
+
+    .promise-section .orb-ring {
+        left: 50% !important;
+        top: 50% !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        max-width: 100% !important;
+        max-height: 100% !important;
+
+        transform-origin: center center;
+    }
+
+    .promise-section .orb-core {
+        left: 50% !important;
+        top: 50% !important;
+
+        max-width: 55% !important;
+        max-height: 55% !important;
+    }
+}
