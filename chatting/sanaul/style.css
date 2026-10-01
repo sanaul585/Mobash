@@ -1682,3 +1682,106 @@ body {
         font-size: 18px;
     }
 }
+
+/* =====================================================
+   MOBILE FIX — WILL YOU MARRY ME / PROPOSAL PAGE
+   Prevent right-side horizontal cut/overflow
+===================================================== */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+main {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Proposal / Promise section */
+.promise-card,
+.promise-card *,
+.final-card,
+.final-card *,
+.family-card,
+.family-card * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 760px) {
+
+    .section {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        overflow-x: hidden;
+    }
+
+    .promise-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 28px 18px !important;
+        overflow: hidden;
+    }
+
+    .promise-card p {
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .promise-ring {
+        max-width: 100%;
+        font-size: 3.2rem;
+    }
+
+    .yes-btn,
+    .primary-btn {
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
+
+    /* Kisi animation ki wajah se page right side na nikle */
+    .hero,
+    .promise-card,
+    .final,
+    .final-card {
+        overflow-x: hidden;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+
+    .promise-card {
+        padding: 24px 14px !important;
+        border-radius: 22px;
+    }
+
+    .promise-card p {
+        font-size: 1.45rem !important;
+        line-height: 1.35;
+    }
+
+    .promise-ring {
+        font-size: 2.8rem;
+    }
+
+    .yes-btn,
+    .primary-btn {
+        width: auto;
+        max-width: 100%;
+        padding: 12px 20px;
+    }
+}
