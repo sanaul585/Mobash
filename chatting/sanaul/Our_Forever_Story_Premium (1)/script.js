@@ -21,3 +21,30 @@ document.querySelectorAll(".gallery input").forEach(input=>input.onchange=()=>{l
 // close modal on outside
 document.querySelectorAll(".modal").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)m.classList.remove("show")}));
 document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".modal").forEach(m=>m.classList.remove("show"))});
+
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+
+    menuToggle.classList.toggle("active");
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+/* Menu link click karne ke baad menu close */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menuToggle.classList.remove("active");
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
