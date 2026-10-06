@@ -1,0 +1,1970 @@
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}:root{--bg:#fbf4f5;--paper:#fffafb;--ink:#281b20;--muted:#816c73;--wine:#801d43;--rose:#c94e78;--gold:#bd8b43;--line:#ead4da;--shadow:0 25px 70px rgba(83,24,45,.13)}body.dark{--bg:#120b0f;--paper:#1d1117;--ink:#faedf1;--muted:#c8aeb7;--wine:#ff7fa6;--rose:#df5c87;--gold:#d5a45c;--line:#4a2935;--shadow:0 25px 70px rgba(0,0,0,.4)}body{font-family:Poppins,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;transition:.5s;overflow-x:hidden}a{text-decoration:none;color:inherit}header{height:78px;position:fixed;z-index:30;top:0;left:0;right:0;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.logo{font-family:"Great Vibes";font-size:29px;color:var(--wine)}.logo span{font-family:Arial;color:var(--rose)}nav{display:flex;gap:30px;font-size:11px;letter-spacing:1px;text-transform:uppercase}nav a{color:var(--muted);transition:.3s}nav a:hover{color:var(--wine)}#theme{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:var(--paper);color:var(--ink);cursor:pointer;font-size:17px}.hero{min-height:100vh;position:relative;display:grid;place-items:center;text-align:center;overflow:hidden;padding:120px 20px 70px;background:radial-gradient(circle at center,rgba(201,78,120,.12),transparent 42%)}.hero-content{position:relative;z-index:2}.overline,.heading>span{font-size:10px;letter-spacing:4px;color:var(--gold);font-weight:600}.tiny-heart{font-size:42px;color:var(--rose);font-family:serif;margin:18px 0}.hero h1{font-family:"Cormorant Garamond";font-size:clamp(75px,12vw,155px);font-weight:400;line-height:.75;letter-spacing:-4px}.hero h1 em,.heading h2 i{font-family:"Great Vibes";font-style:normal;color:var(--wine);font-weight:400}.urdu{font-family:"Cormorant Garamond";font-size:22px;margin:34px 0 2px;color:var(--muted)}.intro{font-size:14px;color:var(--muted)}.couple{font-family:"Great Vibes";font-size:39px;color:var(--wine);margin-top:16px}.couple b{font-family:Arial;color:var(--rose);font-size:20px}.date{font-size:9px;letter-spacing:3px;color:var(--muted);margin-top:5px}.gold-btn{display:inline-flex;align-items:center;gap:18px;margin-top:28px;padding:14px 28px;border:1px solid var(--gold);border-radius:3px;background:linear-gradient(135deg,var(--wine),var(--rose));color:white;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;box-shadow:0 12px 35px rgba(128,29,67,.2);transition:.35s}.gold-btn:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(128,29,67,.3)}.hero-bottom{position:absolute;bottom:25px;font-size:8px;letter-spacing:4px;color:var(--muted)}.hero-orbit{position:absolute;border:1px solid var(--line);border-radius:50%;width:500px;height:500px;opacity:.45;animation:spin 25s linear infinite}.orbit1{transform:rotate(30deg) scaleX(.45)}.orbit2{width:700px;height:700px;transform:rotate(-25deg) scaleX(.3);animation-direction:reverse}@keyframes spin{to{rotate:360deg}}.section{max-width:1180px;margin:auto;padding:125px 6%}.heading{text-align:center;margin-bottom:70px}.heading h2{font-family:"Cormorant Garamond";font-size:clamp(42px,6vw,70px);font-weight:500;line-height:1.1;margin:8px 0}.heading p{font-size:13px;color:var(--muted)}.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.frame{height:520px;padding:14px;border:1px solid var(--gold);position:relative;box-shadow:var(--shadow);transform:rotate(-2deg)}.frame:before{content:"";position:absolute;inset:6px;border:1px solid var(--line)}.placeholder{height:100%;display:grid;place-items:center;text-align:center;background:linear-gradient(145deg,rgba(201,78,120,.12),rgba(189,139,67,.08));color:var(--wine)}.placeholder strong{font-family:"Cormorant Garamond";font-size:48px;line-height:.85;font-weight:500}.placeholder small{font-size:9px;letter-spacing:2px;color:var(--muted)}.story-text .chapter,.chapter{font-size:9px;letter-spacing:3px;color:var(--gold)}.story-text h3{font-family:"Cormorant Garamond";font-size:53px;line-height:1;margin:13px 0 25px;font-weight:500}.story-text h3 i{font-family:"Great Vibes";font-style:normal;color:var(--wine);font-weight:400}.story-text p{color:var(--muted);font-size:13px;margin:15px 0}.quote{border-left:2px solid var(--gold);padding:12px 20px;margin-top:28px;color:var(--wine);font-family:"Cormorant Garamond";font-size:21px;font-style:italic}.engagement{max-width:900px}.engagement-card{display:grid;grid-template-columns:220px 1fr;align-items:center;gap:55px;padding:55px;border:1px solid var(--line);background:var(--paper);box-shadow:var(--shadow)}.ring-display{height:190px;display:grid;place-items:center;font-size:85px;border-right:1px solid var(--line);filter:drop-shadow(0 15px 20px rgba(128,29,67,.2));animation:bob 3s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-10px) rotate(5deg)}}.engagement-card h3{font-family:"Cormorant Garamond";font-size:48px;font-weight:500}.engagement-card p{color:var(--muted);font-size:13px}.date-line{color:var(--gold);letter-spacing:5px;font-size:11px;margin-top:18px}.envelope-area{display:grid;place-items:center;height:390px}.envelope{position:relative;width:390px;height:250px;border:0;background:transparent;cursor:pointer;filter:drop-shadow(0 25px 25px rgba(83,24,45,.18));transition:.4s}.envelope:hover{transform:translateY(-8px)}.front,.flap{position:absolute;inset:0;border-radius:4px;background:linear-gradient(135deg,#c94e78,#801d43)}.front{clip-path:polygon(0 30%,50% 66%,100% 30%,100% 100%,0 100%);z-index:3}.flap{height:65%;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;z-index:4;transition:.8s}.paper{position:absolute;z-index:2;left:8%;right:8%;top:5%;height:88%;background:#fffaf6;color:#801d43;padding:45px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;transition:.8s}.paper small{font:9px Poppins;letter-spacing:3px}.paper strong{font:39px "Great Vibes";font-weight:400}.paper i{font:italic 11px "Cormorant Garamond"}.seal{position:absolute;z-index:5;left:50%;top:51%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#8c214a;color:#fff;border:4px solid #eaa1b8;transition:.4s}.envelope.open .flap{transform:rotateX(180deg);z-index:1}.envelope.open .paper{transform:translateY(-80px);z-index:6}.envelope.open .seal{opacity:0;transform:translate(-50%,-50%) scale(.3)}.reason-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.reason-grid article{padding:45px 25px;border-right:1px solid var(--line);transition:.3s}.reason-grid article:last-child{border:0}.reason-grid article:hover{background:var(--paper);transform:translateY(-5px)}.reason-grid span{font:24px "Cormorant Garamond";color:var(--gold)}.reason-grid b{display:block;font-size:10px;letter-spacing:2px;margin:18px 0}.reason-grid p{font-size:12px;color:var(--muted)}.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.gallery label{height:340px;display:block;cursor:pointer}.gallery input{display:none}.photo{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid var(--line);background:linear-gradient(145deg,rgba(201,78,120,.1),rgba(189,139,67,.07));color:var(--wine);transition:.4s;background-size:cover;background-position:center}.photo:hover{transform:scale(1.02);box-shadow:var(--shadow)}.photo span{font-size:45px;font-family:"Cormorant Garamond";font-weight:300}.photo b{font-size:10px;letter-spacing:2px}.photo small{font-size:9px;color:var(--muted);margin-top:4px}.dreams{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.dreams>div{text-align:center;padding:45px 20px;border:1px solid var(--line);background:var(--paper)}.dreams span{font-size:36px;color:var(--gold)}.dreams h3{font-family:"Cormorant Garamond";font-size:28px;font-weight:500}.dreams p{font-size:11px;color:var(--muted)}.final{padding:150px 20px;text-align:center;position:relative;overflow:hidden;background:radial-gradient(circle at center,rgba(201,78,120,.18),transparent 50%)}.final-inner{max-width:800px;margin:auto}.heart{font-size:58px;color:var(--rose);animation:beat 1.5s infinite}@keyframes beat{15%{transform:scale(1.2)}30%{transform:scale(1)}45%{transform:scale(1.12)}60%,100%{transform:scale(1)}}.final h2{font:500 clamp(50px,8vw,88px)/.9 "Cormorant Garamond";margin:15px 0}.final h2 i{font-family:"Great Vibes";font-style:normal;color:var(--wine)}.final p:not(.overline){font-size:13px;color:var(--muted);max-width:570px;margin:auto}.final .gold-btn{margin-top:30px}footer{text-align:center;padding:55px 20px;border-top:1px solid var(--line);color:var(--muted)}footer .logo{margin-bottom:8px}footer p{font-size:11px}footer small{font-size:8px;letter-spacing:3px}.modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(12,5,8,.78);backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:.4s}.modal.show{opacity:1;pointer-events:auto}.modal-box{position:relative;max-width:650px;width:100%;max-height:85vh;overflow:auto;background:var(--paper);padding:55px;border:1px solid var(--gold);box-shadow:0 40px 100px #0008;transform:translateY(30px);transition:.4s}.modal.show .modal-box{transform:none}.close{position:absolute;right:18px;top:12px;background:none;border:0;color:var(--muted);font-size:30px;cursor:pointer}.modal-box h2{font:500 53px "Cormorant Garamond";margin:10px 0 25px;color:var(--wine)}.modal-box p{font-size:13px;color:var(--muted);margin:13px 0}.signature{font:34px "Great Vibes";color:var(--wine);margin-top:25px}.big-heart{font-size:65px;color:var(--rose);animation:beat 1.3s infinite}.final-modal{text-align:center}.big-question{font:italic 24px "Cormorant Garamond"!important;color:var(--ink)!important}.cursor-heart{position:fixed;z-index:200;pointer-events:none;color:var(--rose);font-size:12px;opacity:0;transform:translate(-50%,-50%);transition:opacity .2s}#particles{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}.particle{position:absolute;top:-20px;color:var(--rose);opacity:.45;animation:fall linear forwards}@keyframes fall{to{transform:translate(var(--x),110vh) rotate(360deg);opacity:0}}#loader{position:fixed;inset:0;z-index:500;background:var(--bg);display:grid;place-items:center;align-content:center;gap:15px;transition:opacity .8s}.loader-ring{font-size:50px;animation:bob 1.5s infinite}.loader-ring+p{font-size:9px;letter-spacing:3px;color:var(--muted)}@media(max-width:850px){nav{display:none}.story-grid{grid-template-columns:1fr;gap:50px}.frame{height:430px}.reason-grid,.dreams{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.engagement-card{grid-template-columns:1fr;text-align:center}.ring-display{border-right:0;border-bottom:1px solid var(--line);height:130px}.section{padding:90px 6%}}@media(max-width:520px){.logo{font-size:25px}.hero h1{font-size:75px}.couple{font-size:31px}.reason-grid,.dreams,.gallery{grid-template-columns:1fr}.gallery label{height:290px}.modal-box{padding:40px 24px}.modal-box h2{font-size:42px}.envelope{width:310px;height:200px}.paper strong{font-size:31px}}
+
+
+.story-image.frame {
+    height: 700px;
+    padding: 0;
+    border: 2px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transform: rotate(-2deg);
+    border-radius: 8px;
+}
+
+.story-image.frame::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(255,255,255,0.7);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.story-image.frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+
+
+
+
+/* =================================
+   ROMANTIC FIANCEE IMAGE
+================================= */
+
+.romantic-photo {
+    position: relative;
+    height: 520px;
+    padding: 0 !important;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 2px solid var(--gold);
+    box-shadow:
+        0 25px 60px rgba(128, 29, 67, 0.25),
+        0 0 40px rgba(201, 78, 120, 0.12);
+
+    transform: rotate(-2deg);
+    transition: transform .5s ease;
+}
+
+.romantic-photo:hover {
+    transform: rotate(0deg) scale(1.015);
+}
+
+
+/* FIANCEE IMAGE */
+
+.romantic-photo > img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform 1.2s ease,
+        filter 1s ease;
+}
+
+/* Slow cinematic zoom */
+
+.romantic-photo:hover > img {
+    transform: scale(1.08);
+}
+
+
+/* IMAGE OVERLAY */
+
+.photo-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(80, 10, 35, 0.05),
+            rgba(80, 10, 35, 0.15),
+            rgba(20, 5, 15, 0.65)
+        );
+
+    z-index: 2;
+}
+
+
+/* GOLD FRAME INSIDE */
+
+.romantic-photo::after {
+    content: "";
+
+    position: absolute;
+    inset: 8px;
+
+    border: 1px solid rgba(255, 220, 160, .75);
+
+    border-radius: 12px;
+
+    z-index: 8;
+
+    pointer-events: none;
+}
+
+
+/* =================================
+   3D FLYING HEARTS
+================================= */
+
+.floating-hearts {
+    position: absolute;
+    inset: 0;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    perspective: 800px;
+}
+
+.floating-hearts span {
+    position: absolute;
+
+    bottom: -60px;
+    left: 50%;
+
+    font-size: 25px;
+
+    opacity: 0;
+
+    filter:
+        drop-shadow(0 8px 8px rgba(0,0,0,.25));
+
+    animation:
+        heartFly 7s linear infinite;
+}
+
+
+/* Different positions */
+
+.floating-hearts span:nth-child(1) {
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 35%;
+    animation-delay: 2s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 55%;
+    animation-delay: 4s;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 75%;
+    animation-delay: 1s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 90%;
+    animation-delay: 3s;
+}
+
+.floating-hearts span:nth-child(6) {
+    left: 45%;
+    animation-delay: 5s;
+}
+
+
+@keyframes heartFly {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            rotateY(0deg)
+            rotateZ(0deg)
+            scale(.4);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translate3d(
+                70px,
+                -260px,
+                120px
+            )
+            rotateY(180deg)
+            rotateZ(25deg)
+            scale(1.15);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate3d(
+                -100px,
+                -600px,
+                300px
+            )
+            rotateY(360deg)
+            rotateZ(-30deg)
+            scale(.3);
+
+        opacity: 0;
+    }
+}
+
+
+/* =================================
+   FLOATING SPARKLES
+================================= */
+
+.sparkles {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 6;
+
+    pointer-events: none;
+}
+
+.sparkles i {
+    position: absolute;
+
+    color: #ffd77a;
+
+    font-style: normal;
+
+    font-size: 18px;
+
+    animation:
+        sparkle 2.5s ease-in-out infinite;
+}
+
+.sparkles i:nth-child(1) {
+    top: 18%;
+    left: 15%;
+}
+
+.sparkles i:nth-child(2) {
+    top: 30%;
+    right: 20%;
+    animation-delay: .5s;
+}
+
+.sparkles i:nth-child(3) {
+    top: 60%;
+    left: 25%;
+    animation-delay: 1s;
+}
+
+.sparkles i:nth-child(4) {
+    top: 70%;
+    right: 15%;
+    animation-delay: 1.5s;
+}
+
+.sparkles i:nth-child(5) {
+    top: 42%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.sparkles i:nth-child(6) {
+    top: 15%;
+    right: 40%;
+    animation-delay: .8s;
+}
+
+@keyframes sparkle {
+
+    0%,100% {
+        transform: scale(.4) rotate(0deg);
+        opacity: .2;
+    }
+
+    50% {
+        transform: scale(1.6) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+
+/* =================================
+   BUTTERFLIES
+================================= */
+
+.butterflies {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 7;
+
+    pointer-events: none;
+}
+
+.butterflies span {
+    position: absolute;
+
+    font-size: 28px;
+
+    opacity: .85;
+
+    filter:
+        drop-shadow(0 5px 10px rgba(0,0,0,.2));
+
+    animation:
+        butterflyFly 9s ease-in-out infinite;
+}
+
+.butterflies span:first-child {
+    bottom: 5%;
+    left: 5%;
+}
+
+.butterflies span:last-child {
+    bottom: 15%;
+    right: 5%;
+
+    animation-delay: 4s;
+}
+
+@keyframes butterflyFly {
+
+    0% {
+        transform:
+            translate(0,0)
+            rotate(-10deg);
+    }
+
+    25% {
+        transform:
+            translate(80px,-120px)
+            rotate(15deg);
+    }
+
+    50% {
+        transform:
+            translate(-30px,-250px)
+            rotate(-15deg);
+    }
+
+    75% {
+        transform:
+            translate(120px,-380px)
+            rotate(20deg);
+    }
+
+    100% {
+        transform:
+            translate(0,-520px)
+            rotate(-10deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =================================
+   TEXT ON PHOTO
+================================= */
+
+.photo-caption {
+    position: absolute;
+
+    z-index: 9;
+
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+
+    color: white;
+
+    text-align: center;
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,.8);
+}
+
+.photo-caption small {
+    letter-spacing: 4px;
+    font-size: 9px;
+}
+
+.photo-caption h3 {
+    margin: 2px 0;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 48px;
+
+    font-weight: 400;
+}
+
+.photo-caption p {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    font-style: italic;
+}
+
+
+/* MOBILE */
+
+@media(max-width:520px) {
+
+    .romantic-photo {
+        height: 430px;
+    }
+
+    .photo-caption h3 {
+        font-size: 38px;
+    }
+
+    .photo-caption p {
+        font-size: 15px;
+    }
+
+    .floating-hearts span {
+        font-size: 20px;
+    }
+}
+
+
+
+/* =========================================
+   PREMIUM ROMANTIC GLOWING BACKGROUND
+========================================= */
+
+body {
+    position: relative;
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 105, 160, 0.30),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(255, 210, 225, 0.45),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 50% 85%,
+            rgba(145, 15, 65, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #fff5f8 0%,
+            #ffdce8 35%,
+            #fff0f5 65%,
+            #f9c5d8 100%
+        );
+
+    background-size:
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        300% 300%;
+
+    animation: romanticBackground 18s ease infinite;
+
+    overflow-x: hidden;
+}
+
+
+/* Animated gradient movement */
+
+@keyframes romanticBackground {
+
+    0% {
+        background-position:
+            0% 0%,
+            100% 0%,
+            50% 100%,
+            0% 50%;
+    }
+
+    50% {
+        background-position:
+            100% 50%,
+            0% 100%,
+            100% 0%,
+            100% 50%;
+    }
+
+    100% {
+        background-position:
+            0% 0%,
+            100% 0%,
+            50% 100%,
+            0% 50%;
+    }
+}
+
+
+/* =========================================
+   GLOWING LIGHT ORBS
+========================================= */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    filter: blur(80px);
+
+    opacity: .45;
+
+    animation: glowOrb 10s ease-in-out infinite alternate;
+}
+
+
+/* Pink glow */
+
+body::before {
+    top: -180px;
+    left: -150px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 40, 120, .55),
+            rgba(255, 100, 160, .15),
+            transparent 70%
+        );
+}
+
+
+/* Dark pink glow */
+
+body::after {
+    right: -180px;
+    bottom: -150px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(150, 20, 75, .35),
+            rgba(255, 120, 170, .12),
+            transparent 70%
+        );
+
+    animation-delay: 4s;
+}
+
+
+@keyframes glowOrb {
+
+    0% {
+        transform: translate(0, 0) scale(.8);
+    }
+
+    50% {
+        transform: translate(100px, 70px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(-50px, -80px) scale(.9);
+    }
+}
+
+
+/* =========================================
+   FLOATING GLOW PARTICLES
+========================================= */
+
+body {
+    isolation: isolate;
+}
+
+body .romantic-particles {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+/* Individual glowing particles */
+
+.romantic-particles span {
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 8px #fff,
+        0 0 18px #ff75a8,
+        0 0 35px #ff4f91;
+
+    opacity: .7;
+
+    animation:
+        glowingParticle 7s linear infinite;
+}
+
+
+/* Different positions */
+
+.romantic-particles span:nth-child(1) {
+    left: 8%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.romantic-particles span:nth-child(2) {
+    left: 18%;
+    top: 70%;
+    animation-delay: 2s;
+}
+
+.romantic-particles span:nth-child(3) {
+    left: 32%;
+    top: 35%;
+    animation-delay: 4s;
+}
+
+.romantic-particles span:nth-child(4) {
+    left: 48%;
+    top: 80%;
+    animation-delay: 1s;
+}
+
+.romantic-particles span:nth-child(5) {
+    left: 65%;
+    top: 25%;
+    animation-delay: 3s;
+}
+
+.romantic-particles span:nth-child(6) {
+    left: 78%;
+    top: 65%;
+    animation-delay: 5s;
+}
+
+.romantic-particles span:nth-child(7) {
+    left: 90%;
+    top: 35%;
+    animation-delay: 1.5s;
+}
+
+.romantic-particles span:nth-child(8) {
+    left: 55%;
+    top: 10%;
+    animation-delay: 3.5s;
+}
+
+
+@keyframes glowingParticle {
+
+    0% {
+        transform:
+            translateY(30px)
+            scale(.3);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .8;
+    }
+
+    50% {
+        transform:
+            translateY(-80px)
+            scale(1.2);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-180px)
+            scale(.2);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   SOFT GLASS EFFECT FOR SECTIONS
+========================================= */
+
+.story,
+.engagement,
+.letter,
+.reasons,
+.gallery-section,
+.future {
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.35),
+            rgba(255,210,225,.18)
+        );
+
+    backdrop-filter: blur(3px);
+
+    border-radius: 30px;
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    box-shadow:
+        0 20px 70px rgba(128, 29, 67, .07);
+
+}
+
+
+/* =========================================
+   GLOW AROUND SECTION HEADINGS
+========================================= */
+
+.heading h2 {
+
+    text-shadow:
+        0 0 20px rgba(201,78,120,.18),
+        0 0 45px rgba(255,150,190,.12);
+
+}
+
+
+.heading > span {
+
+    text-shadow:
+        0 0 12px rgba(189,139,67,.35);
+
+}
+
+
+/* =========================================
+   DARK MODE PREMIUM BACKGROUND
+========================================= */
+
+body.dark {
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(180, 20, 80, .25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 70, 140, .14),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(100, 5, 45, .35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #12070d,
+            #260d18,
+            #180912,
+            #310d20
+        );
+
+    background-size: 300% 300%;
+
+    animation: darkRomanticBackground 20s ease infinite;
+
+}
+
+
+@keyframes darkRomanticBackground {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+/* =========================================
+   ONLY IMAGE BORDER - CONIC GRADIENT
+========================================= */
+
+.romantic-photo {
+    position: relative;
+    height: 520px;
+    padding: 4px !important;
+
+    border: none !important;
+    border-radius: 22px;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    /* Conic gradient sirf border area mein */
+background: conic-gradient(
+    from 0deg,
+    #ff2f7d,
+    #8b0a3d,
+    #ffd166,
+    #ff5c9a,
+    #8b0a3d,
+    #ff2f7d
+);
+
+    background-size: 200% 200%;
+
+    animation: imageBorderGlow 4s linear infinite;
+
+    box-shadow:
+        0 0 10px rgba(255, 50, 130, .45),
+        0 0 25px rgba(255, 50, 130, .25);
+}
+
+
+/* Border ko continuously rotate/glow karna */
+
+@keyframes imageBorderGlow {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.romantic-photo > img {
+    position: absolute;
+
+    top: 4px;
+    left: 4px;
+
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    z-index: 1;
+
+    transition: transform 1s ease;
+}
+
+
+.romantic-photo:hover > img {
+    transform: scale(1.06);
+}
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.photo-overlay {
+
+    position: absolute;
+
+    inset: 5px;
+
+    z-index: 2;
+
+    border-radius: 18px;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(255, 80, 150, .02),
+            transparent 45%,
+            rgba(70, 5, 30, .55)
+        );
+}
+
+
+/* =====================================================
+   HEART PARTICLE CONTAINER
+===================================================== */
+
+.heart-particles {
+
+    position: absolute;
+
+    inset: 5px;
+
+    z-index: 5;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   INDIVIDUAL HEART
+===================================================== */
+
+.heart-particles span {
+
+    position: absolute;
+
+    bottom: -35px;
+
+    left: var(--left);
+
+    font-family: Arial, sans-serif;
+
+    color: var(--heart-color);
+
+    font-size: var(--size);
+
+    opacity: 0;
+
+    filter:
+        drop-shadow(0 0 4px var(--heart-color))
+        drop-shadow(0 0 10px rgba(255, 60, 130, .65));
+
+    animation:
+        flyHeart var(--duration) linear infinite;
+
+    animation-delay: var(--delay);
+
+    transform-style: preserve-3d;
+}
+
+
+/* =====================================================
+   HEART POSITIONS
+===================================================== */
+
+.heart-particles span:nth-child(1) {
+    --left: 3%;
+    --size: 12px;
+    --duration: 5s;
+    --delay: 0s;
+    --heart-color: #ff4f91;
+}
+
+.heart-particles span:nth-child(2) {
+    --left: 8%;
+    --size: 19px;
+    --duration: 7s;
+    --delay: 1s;
+    --heart-color: #ff9ac0;
+}
+
+.heart-particles span:nth-child(3) {
+    --left: 13%;
+    --size: 9px;
+    --duration: 4.5s;
+    --delay: 2.2s;
+    --heart-color: #ffffff;
+}
+
+.heart-particles span:nth-child(4) {
+    --left: 19%;
+    --size: 16px;
+    --duration: 6s;
+    --delay: .5s;
+    --heart-color: #ff3f82;
+}
+
+.heart-particles span:nth-child(5) {
+    --left: 25%;
+    --size: 11px;
+    --duration: 5.5s;
+    --delay: 3s;
+    --heart-color: #ffb3cc;
+}
+
+.heart-particles span:nth-child(6) {
+    --left: 31%;
+    --size: 22px;
+    --duration: 7.5s;
+    --delay: 1.5s;
+    --heart-color: #ff4f91;
+}
+
+.heart-particles span:nth-child(7) {
+    --left: 37%;
+    --size: 10px;
+    --duration: 4s;
+    --delay: .8s;
+    --heart-color: #ffffff;
+}
+
+.heart-particles span:nth-child(8) {
+    --left: 43%;
+    --size: 17px;
+    --duration: 6.5s;
+    --delay: 2.5s;
+    --heart-color: #ff77a9;
+}
+
+.heart-particles span:nth-child(9) {
+    --left: 49%;
+    --size: 13px;
+    --duration: 5s;
+    --delay: 1.2s;
+    --heart-color: #ffb0c9;
+}
+
+.heart-particles span:nth-child(10) {
+    --left: 55%;
+    --size: 21px;
+    --duration: 8s;
+    --delay: 3.5s;
+    --heart-color: #ff3f82;
+}
+
+.heart-particles span:nth-child(11) {
+    --left: 61%;
+    --size: 9px;
+    --duration: 4.5s;
+    --delay: 1s;
+    --heart-color: #ffffff;
+}
+
+.heart-particles span:nth-child(12) {
+    --left: 67%;
+    --size: 15px;
+    --duration: 6s;
+    --delay: 2s;
+    --heart-color: #ff6099;
+}
+
+.heart-particles span:nth-child(13) {
+    --left: 72%;
+    --size: 24px;
+    --duration: 7s;
+    --delay: .4s;
+    --heart-color: #ff8db5;
+}
+
+.heart-particles span:nth-child(14) {
+    --left: 77%;
+    --size: 11px;
+    --duration: 5s;
+    --delay: 2.8s;
+    --heart-color: #ffffff;
+}
+
+.heart-particles span:nth-child(15) {
+    --left: 82%;
+    --size: 18px;
+    --duration: 6.8s;
+    --delay: 1.7s;
+    --heart-color: #ff4f91;
+}
+
+.heart-particles span:nth-child(16) {
+    --left: 87%;
+    --size: 10px;
+    --duration: 4.2s;
+    --delay: 3.2s;
+    --heart-color: #ffb0c9;
+}
+
+.heart-particles span:nth-child(17) {
+    --left: 92%;
+    --size: 20px;
+    --duration: 7.2s;
+    --delay: .7s;
+    --heart-color: #ff4f91;
+}
+
+.heart-particles span:nth-child(18) {
+    --left: 96%;
+    --size: 12px;
+    --duration: 5.7s;
+    --delay: 2.4s;
+    --heart-color: #ffffff;
+}
+
+.heart-particles span:nth-child(19) {
+    --left: 45%;
+    --size: 8px;
+    --duration: 4s;
+    --delay: 3.8s;
+    --heart-color: #ff5d98;
+}
+
+.heart-particles span:nth-child(20) {
+    --left: 57%;
+    --size: 14px;
+    --duration: 5.8s;
+    --delay: 4s;
+    --heart-color: #ffb3cc;
+}
+
+.heart-particles span:nth-child(21) {
+    --left: 28%;
+    --size: 7px;
+    --duration: 3.8s;
+    --delay: 4.5s;
+    --heart-color: #ffffff;
+}
+
+.heart-particles span:nth-child(22) {
+    --left: 70%;
+    --size: 13px;
+    --duration: 5.3s;
+    --delay: 3.7s;
+    --heart-color: #ff3f82;
+}
+
+.heart-particles span:nth-child(23) {
+    --left: 17%;
+    --size: 18px;
+    --duration: 7.5s;
+    --delay: 4.2s;
+    --heart-color: #ff77a9;
+}
+
+.heart-particles span:nth-child(24) {
+    --left: 90%;
+    --size: 9px;
+    --duration: 4.7s;
+    --delay: 3.3s;
+    --heart-color: #ffffff;
+}
+
+.heart-particles span:nth-child(25) {
+    --left: 52%;
+    --size: 16px;
+    --duration: 6.2s;
+    --delay: 4.7s;
+    --heart-color: #ff4f91;
+}
+
+
+/* =====================================================
+   FLYING HEART ANIMATION
+===================================================== */
+
+@keyframes flyHeart {
+
+    0% {
+
+        transform:
+            translate3d(0, 0, 0)
+            rotateY(0deg)
+            rotateZ(0deg)
+            scale(.3);
+
+        opacity: 0;
+    }
+
+
+    10% {
+
+        opacity: .9;
+    }
+
+
+    25% {
+
+        transform:
+            translate3d(-18px, -110px, 40px)
+            rotateY(90deg)
+            rotateZ(-15deg)
+            scale(.8);
+
+        opacity: 1;
+    }
+
+
+    50% {
+
+        transform:
+            translate3d(25px, -260px, 100px)
+            rotateY(180deg)
+            rotateZ(20deg)
+            scale(1.1);
+
+        opacity: .9;
+    }
+
+
+    75% {
+
+        transform:
+            translate3d(-30px, -390px, 160px)
+            rotateY(270deg)
+            rotateZ(-20deg)
+            scale(.75);
+
+        opacity: .65;
+    }
+
+
+    100% {
+
+        transform:
+            translate3d(45px, -560px, 220px)
+            rotateY(360deg)
+            rotateZ(30deg)
+            scale(.25);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =====================================================
+   SPARKLES
+===================================================== */
+
+.photo-sparkles {
+
+    position: absolute;
+
+    inset: 5px;
+
+    z-index: 6;
+
+    pointer-events: none;
+}
+
+
+.photo-sparkles i {
+
+    position: absolute;
+
+    color: #fff;
+
+    font-size: 17px;
+
+    font-style: normal;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 15px #ff4f91;
+
+    animation:
+        sparkle 2s ease-in-out infinite;
+}
+
+
+.photo-sparkles i:nth-child(1) {
+    top: 15%;
+    left: 12%;
+}
+
+.photo-sparkles i:nth-child(2) {
+    top: 25%;
+    right: 15%;
+    animation-delay: .5s;
+}
+
+.photo-sparkles i:nth-child(3) {
+    top: 55%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.photo-sparkles i:nth-child(4) {
+    top: 40%;
+    right: 25%;
+    animation-delay: 1.5s;
+}
+
+.photo-sparkles i:nth-child(5) {
+    top: 70%;
+    right: 10%;
+    animation-delay: .8s;
+}
+
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        transform:
+            scale(.3)
+            rotate(0deg);
+
+        opacity: .2;
+    }
+
+    50% {
+        transform:
+            scale(1.8)
+            rotate(180deg);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =====================================================
+   CAPTION
+===================================================== */
+
+.photo-caption {
+
+    position: absolute;
+
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+
+    z-index: 10;
+
+    color: #fff;
+
+    text-align: center;
+
+    text-shadow:
+        0 2px 15px #000;
+}
+
+
+.photo-caption small {
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+}
+
+
+.photo-caption h3 {
+
+    margin: 2px 0;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 48px;
+
+    font-weight: 400;
+}
+
+
+.photo-caption p {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 18px;
+
+    font-style: italic;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:520px) {
+
+    .romantic-photo {
+        height: 430px;
+    }
+
+    .photo-caption h3 {
+        font-size: 38px;
+    }
+
+    .photo-caption p {
+        font-size: 15px;
+    }
+
+}
+
+
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 25%,
+            rgba(70, 0, 25, 0.20) 100%
+        );
+
+    box-shadow:
+        inset 0 0 180px rgba(100, 0, 45, 0.25);
+}
+
+
+/* =========================================
+   ROMANTIC ROSE + HEART BACKGROUND
+========================================= */
+
+body {
+    position: relative;
+
+    background-image:
+        linear-gradient(
+            135deg,
+            rgba(255, 225, 236, 0.78),
+            rgba(255, 180, 210, 0.58),
+            rgba(120, 10, 55, 0.42)
+        ),
+        url("image/Dreamy Valentine Rose Garden.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    background-repeat: no-repeat;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   SOFT ROMANTIC GLOW
+========================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(255, 255, 255, 0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255, 70, 140, 0.25),
+            transparent 30%
+        );
+
+    animation: backgroundGlow 6s ease-in-out infinite alternate;
+}
+
+
+@keyframes backgroundGlow {
+
+    0% {
+        opacity: .55;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 80, 140, 0.25),
+            rgba(70, 0, 35, 0.45)
+        ),
+        url("image/Dreamy Valentine Rose Garden.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+}
+
+/* =====================================================
+   PREMIUM TEXT EFFECT
+   For Romantic Background Image
+===================================================== */
+
+/* Main body text */
+body {
+    color: #4a1230;
+}
+
+
+/* =====================================================
+   ALL HEADINGS
+===================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+    color: #6e123b;
+
+    text-shadow:
+        0 2px 5px rgba(255,255,255,.9),
+        0 0 15px rgba(255,255,255,.65),
+        0 0 25px rgba(255,105,160,.25);
+}
+
+
+/* =====================================================
+   MAIN HERO HEADING
+===================================================== */
+
+.hero h1 {
+    color: #ffffff;
+
+    text-shadow:
+        0 2px 4px rgba(60,0,25,.85),
+        0 0 10px rgba(255,255,255,.95),
+        0 0 25px rgba(255,80,150,.85),
+        0 0 45px rgba(255,80,150,.45);
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   HERO PARAGRAPH
+===================================================== */
+
+.hero p,
+.hero .intro {
+    color: #fff;
+
+    text-shadow:
+        0 2px 5px rgba(50,0,25,.9),
+        0 0 12px rgba(255,70,140,.55);
+}
+
+
+/* =====================================================
+   ROMANTIC SECTION HEADINGS
+===================================================== */
+
+.heading h2 {
+    background:
+        linear-gradient(
+            90deg,
+            #7b123f,
+            #d52d70,
+            #8d174b
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,.65);
+
+    font-weight: 700;
+}
+
+
+/* Small chapter text */
+
+.heading > span,
+.chapter {
+    color: #8d174b;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 1px 3px #fff,
+        0 0 10px rgba(255,105,160,.45);
+}
+
+
+/* =====================================================
+   NORMAL PARAGRAPH
+===================================================== */
+
+section p {
+    color: #421328;
+
+    text-shadow:
+        0 1px 3px rgba(255,255,255,.85);
+}
+
+
+/* =====================================================
+   STORY TEXT BOX
+===================================================== */
+
+.story-text {
+    position: relative;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.72),
+            rgba(255,235,243,.55)
+        );
+
+    border: 1px solid rgba(255,255,255,.85);
+
+    box-shadow:
+        0 10px 35px rgba(100,10,50,.12),
+        inset 0 0 25px rgba(255,255,255,.4);
+
+    backdrop-filter: blur(8px);
+
+    color: #421328;
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.quote {
+    color: #7b123f;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    font-style: italic;
+
+    text-shadow:
+        0 1px 4px rgba(255,255,255,.95),
+        0 0 12px rgba(255,105,160,.3);
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.gold-btn,
+button,
+.btn {
+    color: #fff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9d174d,
+            #e83e7d,
+            #9d174d
+        );
+
+    border: 1px solid rgba(255,255,255,.6);
+
+    box-shadow:
+        0 8px 25px rgba(130,10,60,.3),
+        0 0 15px rgba(255,80,145,.25);
+
+    text-shadow:
+        0 2px 4px rgba(60,0,25,.65);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.gold-btn:hover,
+button:hover,
+.btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(130,10,60,.4),
+        0 0 30px rgba(255,80,145,.45);
+}
+
+
+/* =====================================================
+   DATE / SPECIAL TEXT
+===================================================== */
+
+.date {
+    color: #8d174b;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 1px 3px #fff,
+        0 0 12px rgba(255,80,145,.45);
+}
+
+
+/* =====================================================
+   NAVIGATION TEXT
+===================================================== */
+
+nav a {
+    color: #70123d;
+
+    font-weight: 600;
+
+    text-shadow:
+        0 1px 3px rgba(255,255,255,.9);
+
+    transition: .3s ease;
+}
+
+
+nav a:hover {
+    color: #e42f75;
+
+    text-shadow:
+        0 0 10px rgba(255,70,140,.65),
+        0 1px 4px #fff;
+}
+
+
+/* =====================================================
+   GOLD ACCENT
+===================================================== */
+
+.gold,
+.eyebrow {
+    color: #a15b16;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 1px 3px #fff,
+        0 0 10px rgba(255,210,120,.5);
+}
+
+
+/* =====================================================
+   IMAGE CAPTION
+===================================================== */
+
+.photo-caption h3 {
+    color: #fff;
+
+    text-shadow:
+        0 2px 5px rgba(0,0,0,.85),
+        0 0 12px rgba(255,255,255,.8),
+        0 0 30px rgba(255,60,140,.8);
+}
+
+.photo-caption p,
+.photo-caption small {
+    color: #fff;
+
+    text-shadow:
+        0 2px 5px rgba(0,0,0,.9),
+        0 0 12px rgba(255,70,140,.65);
+}
+
+
+/* =====================================================
+   LETTER / CARD CONTENT
+===================================================== */
+
+.letter,
+.engagement-card,
+.reason-card,
+.future-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.78),
+            rgba(255,230,240,.65)
+        );
+
+    border: 1px solid rgba(255,255,255,.85);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 15px 45px rgba(80,5,40,.14),
+        inset 0 0 25px rgba(255,255,255,.4);
+}
+
+
+.letter p,
+.engagement-card p,
+.reason-card p,
+.future-card p {
+    color: #421328;
+
+    text-shadow:
+        0 1px 3px rgba(255,255,255,.9);
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark {
+    color: #ffeaf2;
+}
+
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4 {
+    color: #fff;
+
+    text-shadow:
+        0 2px 5px rgba(0,0,0,.9),
+        0 0 15px rgba(255,80,150,.7),
+        0 0 30px rgba(255,80,150,.4);
+}
+
+
+body.dark section p,
+body.dark .story-text p,
+body.dark .letter p {
+    color: #ffe7f0;
+
+    text-shadow:
+        0 2px 5px rgba(0,0,0,.9);
+}
+
+
+body.dark .story-text,
+body.dark .letter,
+body.dark .engagement-card,
+body.dark .reason-card,
+body.dark .future-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(45,8,25,.78),
+            rgba(80,10,40,.65)
+        );
+
+    border-color:
+        rgba(255,120,170,.25);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.4),
+        0 0 25px rgba(255,50,130,.08);
+}
+
+
+.gallery .photo {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery .photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(50, 0, 25, .75),
+        transparent 55%
+    );
+    pointer-events: none;
+}
+
+.gallery .photo b,
+.gallery .photo small {
+    position: absolute;
+    left: 18px;
+    z-index: 3;
+    color: white;
+}
+
+.gallery .photo b {
+    bottom: 35px;
+}
+
+.gallery .photo small {
+    bottom: 15px;
+    opacity: .85;
+}
