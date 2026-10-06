@@ -2005,3 +2005,199 @@ body.dark .future-card {
         background: rgba(255, 220, 235, 0.25);
     }
 }
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid rgba(255,255,255,.6);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,.25);
+
+    backdrop-filter: blur(10px);
+
+    cursor: pointer;
+
+    padding: 9px;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 24px;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: #8d174b;
+
+    transition: .35s ease;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    /* Show hamburger */
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    /* Mobile navigation */
+
+    .nav-links {
+
+        position: absolute;
+
+        top: calc(100% + 12px);
+
+        left: 12px;
+        right: 12px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 5px;
+
+        padding: 15px;
+
+        border-radius: 20px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255,255,255,.92),
+                rgba(255,220,235,.88)
+            );
+
+        backdrop-filter: blur(18px);
+
+        box-shadow:
+            0 20px 50px rgba(80,5,40,.2),
+            0 0 25px rgba(255,80,145,.15);
+
+        border: 1px solid rgba(255,255,255,.9);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform:
+            translateY(-15px)
+            scale(.97);
+
+        transition:
+            opacity .3s ease,
+            transform .3s ease,
+            visibility .3s ease;
+
+        z-index: 1000;
+    }
+
+
+    /* Open menu */
+
+    .nav-links.active {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+
+    /* Menu links */
+
+    .nav-links a {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 14px 18px;
+
+        border-radius: 12px;
+
+        color: #72123d;
+
+        text-decoration: none;
+
+        font-weight: 600;
+
+        background: rgba(255,255,255,.25);
+
+        transition: .3s ease;
+    }
+
+
+    .nav-links a:hover,
+    .nav-links a:active {
+
+        background:
+            linear-gradient(
+                135deg,
+                #9d174d,
+                #e83e7d
+            );
+
+        color: white;
+
+        transform: translateX(5px);
+    }
+
+
+    /* Hamburger animation */
+
+    .menu-toggle.active span:nth-child(1) {
+
+        transform:
+            translateY(7px)
+            rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+
+        transform:
+            translateY(-7px)
+            rotate(-45deg);
+    }
+}
