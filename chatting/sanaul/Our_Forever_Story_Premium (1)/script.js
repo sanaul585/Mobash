@@ -24,26 +24,32 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelect
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Apne mobile menu button ko select karein (Aapke header mein jo button hai)
-    const menuToggle = document.querySelector(".mobile-menu-toggle") || document.querySelector(".menu-icon") || document.querySelector("header button");
+    // 1. Aapke page par jo bhi menu button ya teen line ka icon hai use dhoodhna
+    const menuBtn = document.querySelector(".menu-icon") || document.querySelector(".mobile-menu-toggle") || document.querySelector("header svg")?.parentElement;
     
-    // 2. Apne main menu options container ko select karein
-    const navMenu = document.querySelector(".nav-menu-options") || document.querySelector("nav ul");
+    // 2. Jo menu items ki list khulni chahiye use dhoodhna
+    const menuList = document.querySelector("nav ul") || document.querySelector(".nav-menu-options");
 
-    if (menuToggle && navMenu) {
-        menuToggle.onclick = (e) => {
-            e.stopPropagation(); // Click event ko rukne ke liye
-            navMenu.classList.toggle("show");
-        };
+    if (menuBtn && menuList) {
+        // Button click function
+        menuBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation(); // Baki layers par click transfer hone se rokne ke liye
+            menuList.classList.toggle("show");
+            console.log("Menu clicked successfully!"); // Browser console mein check karne ke liye
+        });
 
-        // Agar menu se bahr click ho toh menu band ho jaye
+        // Agar menu khula ho aur screen par kahin aur click ho toh automatic band ho jaye
         document.addEventListener("click", (e) => {
-            if (!navMenu.contains(e.target) && e.target !== menuToggle) {
-                navMenu.classList.remove("show");
+            if (!menuList.contains(e.target) && !menuBtn.contains(e.target)) {
+                menuList.classList.remove("show");
             }
         });
+    } else {
+        console.log("Menu element ya list nahi mili. Kripya HTML classes check karein.");
     }
 });
+
 
 
 
