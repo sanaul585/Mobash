@@ -2122,3 +2122,39 @@ body.dark .future-card {
         display: flex;
     }
 }
+
+
+/* Header container ko relative banayein taaki z-index kaam kare */
+header, .header-container {
+    position: relative;
+    z-index: 100;
+}
+
+/* Menu icon ko sabse top layer par lane ke liye */
+.menu-icon, .mobile-menu-toggle, header button {
+    position: relative !important;
+    z-index: 9999 !important; /* Isse button har layer ke upar aa jayega */
+    pointer-events: auto !important; /* Isse click block nahi hoga */
+    cursor: pointer;
+}
+
+/* Mobile par jab menu open ho (.show class ke sath) */
+@media (max-width: 768px) {
+    nav ul, .nav-menu-options {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 230, 235, 0.98) !important; /* Pink theme background */
+        flex-direction: column;
+        padding: 20px 0;
+        z-index: 9998 !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* JavaScript click ke baad dikhane ke liye */
+    nav ul.show, .nav-menu-options.show {
+        display: flex !important;
+    }
+}
