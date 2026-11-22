@@ -51,5 +51,36 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Poore page par menu bar select karne ka sacha tarika
+document.addEventListener("click", function(event) {
+    // 1. Dhoodhein ki kya click mobile menu icon par ya uske andar ke kisi element par hua hai
+    const menuIcon = document.querySelector(".menu-icon") || 
+                     document.querySelector(".mobile-menu-toggle") || 
+                     document.querySelector("header button") ||
+                     event.target.closest('.menu-icon') ||
+                     event.target.closest('.mobile-menu-toggle');
+
+    // 2. Target Menu list jise open/close karna hai
+    const menuList = document.querySelector("nav ul") || 
+                      document.querySelector(".nav-menu-options") || 
+                      document.querySelector("#menuList");
+
+    // Agar direct menu icon par click hua hai
+    if (menuIcon && (event.target === menuIcon || menuIcon.contains(event.target))) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        if (menuList) {
+            menuList.classList.toggle("show");
+            menuList.classList.toggle("active"); // Dono options backup ke liye
+            console.log("Strict Click Captured: Menu Toggled!");
+        }
+    } 
+    // Agar menu khula hai aur bahar kahin click ho toh close ho jaye
+    else if (menuList && !menuList.contains(event.target)) {
+        menuList.classList.remove("show");
+        menuList.classList.remove("active");
+    }
+});
 
 
