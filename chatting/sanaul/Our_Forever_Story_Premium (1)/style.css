@@ -2195,3 +2195,60 @@ header, .header, .header-container {
         display: flex !important;
     }
 }
+
+@media (max-width: 768px) {
+    /* Mobile standard par hamburger button aur icons sahi position mein rahein */
+    .mobile-menu-toggle {
+        display: block !important;
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        z-index: 1000001 !important;
+    }
+
+    /* OPEN HONE VALA MENU CONTAINER: Isko hum ekdum premium look de rahe hain */
+    #menuList {
+        /* Jab tak button na dabayein, tab tak chhupa rahega (Aapne HTML inline lagaya hai toh yeh automatic handle hoga) */
+        position: absolute !important;
+        top: 60px !important; /* Header ke theek niche se shuru hoga */
+        left: 0 !important;
+        width: 100% !important;
+        background: rgba(255, 240, 243, 0.98) !important; /* Soft, beautiful translucent romantic pink background */
+        flex-direction: column !important;
+        align-items: center !important; /* Saare text links bilkul center (beecho-beech) aayenge */
+        justify-content: center !important;
+        padding: 20px 0 !important;
+        z-index: 999999 !important; /* Har element ke upar dikhega */
+        box-shadow: 0 10px 25px rgba(255, 77, 109, 0.2) !important; /* Romantic pink soft shadow */
+        border-bottom: 3px solid #ff4d6d; /* Niche ek pyari si pink border line */
+        border-radius: 0 0 20px 20px; /* Niche ke corners thode se round ho jayenge */
+    }
+
+    /* MENU LINKS STYLING: Har ek text link ko sundar aur bada banane ke liye */
+    #menuList a {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important; /* Text bilkul beech mein align hoga */
+        padding: 14px 0 !important; /* Har option ke beech mein sahi gap */
+        color: #4a0e17 !important; /* Dark romantic maroon color jo aasaani se padha ja sake */
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important; /* Saare akshar capital letters mein bade lagenge */
+        text-decoration: none !important;
+        letter-spacing: 1.5px !important; /* Aksharon ke beech mein premium gap */
+        transition: all 0.3s ease !important; /* Hover karne par smooth transition effect */
+        border-bottom: 1px solid rgba(255, 77, 109, 0.1); /* Har option ke beech ek patli line */
+    }
+
+    /* Aakhiri link (Back to Home) ke niche ki border line hatane ke liye */
+    #menuList a:last-child {
+        border-bottom: none !important;
+    }
+
+    /* HOVER EFFECT: Jab Mobasshera kisi text par ungli rakhengi ya tap karengi */
+    #menuList a:hover, #menuList a:active {
+        background-color: rgba(255, 77, 109, 0.15) !important; /* Halka sa dark pink background highlight */
+        color: #ff4d6d !important; /* Text ka color bright pink ho jayega */
+        font-scale: 1.05; /* Halka sa bada hoga link */
+    }
+}
