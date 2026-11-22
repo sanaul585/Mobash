@@ -2088,6 +2088,35 @@ body.dark .future-card {
         padding: 20px;
     }
 
+
+    @media (max-width: 768px) {
+    /* By default mobile par menu options list ko chhupa kar rakhein */
+    .nav-menu-options, nav ul {
+        display: none; 
+        position: absolute;
+        top: 70px; /* Header ke theek niche lane ke liye */
+        left: 0;
+        width: 100%;
+        background: rgba(255, 230, 235, 0.95); /* Romantic Light Pink Translucent Background */
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    /* JAB JAVASCRIPT 'show' CLASS ADD KAREGA - TAB MENU DIKHEGA */
+    .nav-menu-options.show, nav ul.show {
+        display: flex !important; /* Isse menu dropdown open ho jayega */
+    }
+
+    /* Menu ke andar ke links ki styling */
+    .nav-menu-options li, nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+}
+
+
     /* Jab button click ho aur active class lage toh menu options show ho jayein */
     .nav-menu-options.active {
         display: flex;
