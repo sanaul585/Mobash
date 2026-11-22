@@ -22,5 +22,15 @@ document.querySelectorAll(".gallery input").forEach(input=>input.onchange=()=>{l
 document.querySelectorAll(".modal").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)m.classList.remove("show")}));
 document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".modal").forEach(m=>m.classList.remove("show"))});
 
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".mobile-menu-toggle");
+    const navMenu = document.querySelector(".nav-menu-options"); // Aapki menu class name
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    }
+});
 
 
