@@ -24,63 +24,24 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelect
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Aapke page par jo bhi menu button ya teen line ka icon hai use dhoodhna
-    const menuBtn = document.querySelector(".menu-icon") || document.querySelector(".mobile-menu-toggle") || document.querySelector("header svg")?.parentElement;
-    
-    // 2. Jo menu items ki list khulni chahiye use dhoodhna
-    const menuList = document.querySelector("nav ul") || document.querySelector(".nav-menu-options");
+    const menuToggle = document.querySelector(".mobile-menu-toggle");
+    const menuList = document.getElementById("menuList");
 
-    if (menuBtn && menuList) {
-        // Button click function
-        menuBtn.addEventListener("click", (e) => {
+    if (menuToggle && menuList) {
+        menuToggle.addEventListener("click", (e) => {
             e.preventDefault();
-            e.stopPropagation(); // Baki layers par click transfer hone se rokne ke liye
+            e.stopPropagation();
             menuList.classList.toggle("show");
-            console.log("Menu clicked successfully!"); // Browser console mein check karne ke liye
         });
 
-        // Agar menu khula ho aur screen par kahin aur click ho toh automatic band ho jaye
+        // Agar menu khula ho aur screen par kahin aur click ho toh band ho jaye
         document.addEventListener("click", (e) => {
-            if (!menuList.contains(e.target) && !menuBtn.contains(e.target)) {
+            if (!menuList.contains(e.target) && !menuToggle.contains(e.target)) {
                 menuList.classList.remove("show");
             }
         });
-    } else {
-        console.log("Menu element ya list nahi mili. Kripya HTML classes check karein.");
     }
 });
 
-
-// Poore page par menu bar select karne ka sacha tarika
-document.addEventListener("click", function(event) {
-    // 1. Dhoodhein ki kya click mobile menu icon par ya uske andar ke kisi element par hua hai
-    const menuIcon = document.querySelector(".menu-icon") || 
-                     document.querySelector(".mobile-menu-toggle") || 
-                     document.querySelector("header button") ||
-                     event.target.closest('.menu-icon') ||
-                     event.target.closest('.mobile-menu-toggle');
-
-    // 2. Target Menu list jise open/close karna hai
-    const menuList = document.querySelector("nav ul") || 
-                      document.querySelector(".nav-menu-options") || 
-                      document.querySelector("#menuList");
-
-    // Agar direct menu icon par click hua hai
-    if (menuIcon && (event.target === menuIcon || menuIcon.contains(event.target))) {
-        event.preventDefault();
-        event.stopPropagation();
-        
-        if (menuList) {
-            menuList.classList.toggle("show");
-            menuList.classList.toggle("active"); // Dono options backup ke liye
-            console.log("Strict Click Captured: Menu Toggled!");
-        }
-    } 
-    // Agar menu khula hai aur bahar kahin click ho toh close ho jaye
-    else if (menuList && !menuList.contains(event.target)) {
-        menuList.classList.remove("show");
-        menuList.classList.remove("active");
-    }
-});
 
 
