@@ -22,15 +22,28 @@ document.querySelectorAll(".gallery input").forEach(input=>input.onchange=()=>{l
 document.querySelectorAll(".modal").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)m.classList.remove("show")}));
 document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".modal").forEach(m=>m.classList.remove("show"))});
 
+
 document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".mobile-menu-toggle");
-    const navMenu = document.querySelector(".nav-menu-options"); // Aapki menu class name
+    // 1. Apne mobile menu button ko select karein (Aapke header mein jo button hai)
+    const menuToggle = document.querySelector(".mobile-menu-toggle") || document.querySelector(".menu-icon") || document.querySelector("header button");
+    
+    // 2. Apne main menu options container ko select karein
+    const navMenu = document.querySelector(".nav-menu-options") || document.querySelector("nav ul");
 
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
+        menuToggle.onclick = (e) => {
+            e.stopPropagation(); // Click event ko rukne ke liye
+            navMenu.classList.toggle("show");
+        };
+
+        // Agar menu se bahr click ho toh menu band ho jaye
+        document.addEventListener("click", (e) => {
+            if (!navMenu.contains(e.target) && e.target !== menuToggle) {
+                navMenu.classList.remove("show");
+            }
         });
     }
 });
+
 
 
