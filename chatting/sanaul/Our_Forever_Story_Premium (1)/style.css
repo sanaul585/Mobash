@@ -2049,3 +2049,47 @@ body.dark .future-card {
     transition: .35s ease;
 }
 
+/* By default desktop par hamburger icon hidden rahega */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: inherit; /* Aapke light/dark mode text color ko auto-adapt karega */
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1000;
+}
+
+/* Mobile Media Query (Screens smaller than 768px) */
+@media (max-width: 768px) {
+    /* Menu Icon ko mobile par visible karna */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    /* ensure karein ki aapka main nav container aur dark mode icon ek line mein rahein */
+    .nav-container, header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Jab menu band ho toh options list hide rahegi */
+    .nav-menu-options {
+        display: none; 
+        position: absolute;
+        top: 60px; /* Header ke niche position */
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color, #ffffff); /* Automatic background theme support */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    /* Jab button click ho aur active class lage toh menu options show ho jayein */
+    .nav-menu-options.active {
+        display: flex;
+    }
+}
